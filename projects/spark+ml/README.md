@@ -2,7 +2,7 @@
 
 | Item | Details |
 | --- | --- |
-| Due date | [to set] |
+| Due date | [20december] |
 | Group size | 2-4 students |
 | Submission | One GitHub repository per group |
 | Language | Python (PySpark 3.5+) |
