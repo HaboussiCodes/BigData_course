@@ -21,8 +21,8 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | A | | | | 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
-| D | | | | 8-9: performance experiment |
-| E | | | | 10:|
+| D | | | | 8: performance experiment |
+| E | | | | 9:the causes of delays per airline and per airport|
 
 ### Week 1 checklist
 
