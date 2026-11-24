@@ -152,14 +152,6 @@ The group earns a score out of 15.
 
 During the oral check, each student explains a part of their own code chosen by the teacher. A student who cannot explain their code receives zero.
 
-### Grade out of 20
-
-```math
-\text{grade} = \min\left(20,\ \frac{\text{group score} \times \text{share}}{5}\right) \qquad (\text{divide by } 5.5 \text{ for G7})
-```
-
-Example: a group scores 82 points plus the 5-point bonus, so 87. A member with a moderate contribution at 80% gets 87 × 0.8 ÷ 5 = 13.92 out of 20.
-
 ## Setup
 
 The whole project runs on a laptop in `local[*]` mode: no cluster is needed. All groups use the same versions, so results and errors can be compared. This combination was tested on 20 November 2026.
