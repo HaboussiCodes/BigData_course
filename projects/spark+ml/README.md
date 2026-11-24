@@ -44,11 +44,11 @@ The project runs over 4 weeks, with a checkpoint at the end of each week and the
 
 | Week | Dates | Work to finish | Pushed to GitHub by |
 | --- | --- | --- | --- |
-| 1 | 22-28 Nov | Form the group, install Spark, create the repository, download the data, Tasks 1-3 | 2026-11-28 |
-| 2 | 29 Nov-5 Dec | Tasks 4-7: Phase A complete | 2026-12-05 |
-| 3 | 6-12 Dec | Task 8: the script | 2026-12-12 |
-| 4 | 13-19 Dec | Task 9 (and Task 10 for G7), README report | 2026-12-19, final submission |
-| Oral | First lab session after the deadline | 15 minutes per group: 5-minute demo of the results, then each member explains a part of their own code | To schedule |
+| 1 | - | Form the group, install Spark, create the repository, download the data, Tasks 1-3 | - |
+| 2 | - | Tasks 4-7: Phase A complete | - |
+| 3 | - | Task 8: the script | - |
+| 4 | - | Task 9 , README report | -|
+| Oral |  after the deadline | 10 minutes per group: 5-minute demo of the results, then each member explains a part of their own code | 16 December 2026 |
 
 ## The two phases
 
@@ -102,7 +102,7 @@ The teacher gives each member one block of tasks, written in the table of the Gr
 | B | Tasks 4-5: joins, Spark SQL | - |
 | C | Tasks 6-7: charts of patterns over time, window functions |- |
 | D | Tasks 8: performance experiment | - |
-| E  | Task 9: extension | -|
+| E  | Task 9 | -|
 
 Task 1 comes first because every other task uses the cleaned data. Member A pushes it during week 1, and the others start from it. The README is written together: each member writes the part about their own tasks.
 
