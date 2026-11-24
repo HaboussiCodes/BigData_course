@@ -134,12 +134,10 @@ daily.withColumn("avg_7_days", F.avg("trips").over(w))
 
 **Requirement:** `Window.partitionBy(...).orderBy(...)` with `row_number()` for the zones, and `rowsBetween` for the moving average. Which days are far below their 7-day average, and why?
 
-## Phase B and Task 10
+## Phase B and Task 8
+- **Task 8:** time your Task 3 on the three months. The data already comes as Parquet, so compare it with a CSV copy.
 
-- **Task 8:** the script is `taxi_duration_job.py`. It runs Tasks 1 and 3 and writes the two tables of Task 3 in `output/`. Run it with `spark-submit --master "local[*]" --driver-memory 4g taxi_duration_job.py data/`.
-- **Task 9:** time your Task 3 on the three months. The data already comes as Parquet, so compare it with a CSV copy.
-
-### Task 10 (G7 only, 10 points): Busy hours of each zone
+### Task 9: Busy hours of each zone
 
 - For the 20 busiest pickup zones, count the trips per hour: `groupBy("Zone").pivot("hour").count()`.
 - Draw it as a heatmap (zones × hours) with matplotlib `imshow`.
@@ -156,4 +154,3 @@ daily.withColumn("avg_7_days", F.avg("trips").over(w))
 5. **The same columns twice.** When you join the zone table twice, rename its columns each time (for example `Borough` becomes `pu_borough`, then `do_borough`), or Spark cannot tell them apart.
 6. **Days of the week.** `F.dayofweek` gives 1 for Sunday and 7 for Saturday.
 7. **`toPandas()` only on small results.** Aggregate first, then convert.
-8. **A script is not a notebook.** `taxi_duration_job.py` creates its own `SparkSession` and ends with `spark.stop()`.
