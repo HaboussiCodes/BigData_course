@@ -54,8 +54,6 @@ The whole project runs on a laptop in `local[*]` mode: no cluster is needed. Eve
 | Python | 3.11 | [python.org/downloads](https://www.python.org/downloads/) |
 | PySpark and libraries | PySpark 3.5.x, pandas below 3 | `pip install "pyspark==3.5.*" "pandas<3" matplotlib pyarrow jupyter` |
 
-**Windows only:** copy `winutils.exe` and `hadoop.dll` from a `hadoop-3.3.x/bin` folder of [cdarlint/winutils](https://github.com/cdarlint/winutils) into `C:\hadoop\bin`, set `HADOOP_HOME=C:\hadoop`, add `%HADOOP_HOME%\bin` to `PATH`, and open a new terminal.
-
 **Quick check** (every member, in a terminal):
 
 ```bash
