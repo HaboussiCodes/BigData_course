@@ -1,26 +1,26 @@
 # Big Data Group Projects with PySpark
 
-29 students work in 7 groups: six groups of 4 and one group of 5. Each group gets a different subject built on a real public dataset of several million rows. All subjects follow the same two phases, the same deliverables and the same 100-point grid, so every group does comparable work.
+ Students work in  groups. Each group gets a different subject built on a real public dataset of several million rows. All subjects follow the same two phases, the same deliverables, so every group does comparable work.
 
 ## The 7 subjects
 
-Each subject uses a different real dataset, with the same nine tasks and the same grid: seven PySpark query tasks, then the script and the performance experiment. Open a subject to read its full description.
+Each subject uses a different real dataset, with the same nine tasks and the same grid: seven PySpark query tasks, the performance experiment. Open a subject to read its full description.
 
-| # | Subject | Domain | Dataset | Size | Data access | Task 10 (G7) |
+| # | Subject | Domain | Dataset | Size | Data access |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | [1 · Flight delays](subject-1-flight-delay/) | Air transport | US DOT flights, 2015 | 5.8 M flights | Kaggle account | Causes of delays |
-| 2 | [2 · NYC taxi trip time](subject-2-nyc-taxi/) | City transport | NYC yellow taxi trips, January-March 2024 | About 9 M trips | Free download | Busy hours heatmap |
-| 3 | [3 · Instacart segments](subject-3-instacart/) | Retail | Instacart orders, 2017 | 3.4 M orders, 33.8 M basket lines | Kaggle account | Products bought together |
-| 4 | [4 · Book recommender](subject-4-book-recommender/) | Books | Goodbooks-10k (Goodreads) | 6 M ratings | Free download (GitHub) | To-read lists |
-| 5 | [5 · Amazon review sentiment](subject-5-amazon-reviews/) | Online shopping, text | Amazon Reviews 2023, Video Games | 4.6 M reviews | Free download | Words of unhappy customers |
-| 6 | [6 · Rain tomorrow](subject-6-rain-tomorrow/) | Climate | NOAA daily weather, 2023-2024 | Millions of station-days | Free download | Climate map |
-| 7 | [7 · Mobile money fraud](subject-7-mobile-money-fraud/) | Finance | PaySim mobile money | 6.36 M transactions | Kaggle account | Fraud patterns by amount |
+| 1 | [1 · Flight delays](subject-1-flight-delay/) | Air transport | US DOT flights, 2015 | 5.8 M flights | Kaggle account | 
+| 2 | [2 · NYC taxi trip time](subject-2-nyc-taxi/) | City transport | NYC yellow taxi trips, January-March 2024 | About 9 M trips | Free download |
+| 3 | [3 · Instacart segments](subject-3-instacart/) | Retail | Instacart orders, 2017 | 3.4 M orders, 33.8 M basket lines | Kaggle account |
+| 4 | [4 · Book recommender](subject-4-book-recommender/) | Books | Goodbooks-10k (Goodreads) | 6 M ratings | Free download (GitHub) |
+| 5 | [5 · Amazon review sentiment](subject-5-amazon-reviews/) | Online shopping, text | Amazon Reviews 2023, Video Games | 4.6 M reviews | Free download |
+| 6 | [6 · Rain tomorrow](subject-6-rain-tomorrow/) | Climate | NOAA daily weather, 2023-2024 | Millions of station-days | Free download |
+| 7 | [7 · Mobile money fraud](subject-7-mobile-money-fraud/) | Finance | PaySim mobile money | 6.36 M transactions | Kaggle account |
 
 Each subject folder holds the full subject, and a `starter/` folder with the two files to copy into your group's repository: its `README.md` (your report) and its `.gitignore`.
 
-## Groups and subjects
+## Subjects
 
-The class forms 7 groups. Groups G1 to G6 have 4 members. G7 has 5 members and also does Task 10 (see Work distribution). Each group gets a different subject, so no two groups work on the same data.
+The class forms 7 groups.
 
 The 7 subjects are: 1 Flight delays, 2 NYC taxi trip time, 3 Instacart customer segments, 4 Book recommender, 5 Amazon review sentiment, 6 Rain tomorrow, 7 Mobile money fraud. Each one is described in full in its folder: see [The 7 subjects](#the-7-subjects) above.
 
@@ -40,7 +40,7 @@ The 7 subjects are: 1 Flight delays, 2 NYC taxi trip time, 3 Instacart customer 
 
 ## Calendar
 
-The project runs over 4 weeks, with a checkpoint at the end of each week and the final submission on 2026-12-19 at 23:59. At each checkpoint the teacher looks at your repository. Checkpoints have no points of their own, but they count in the Git workflow score and in each member's contribution level.
+The project runs over 2 weeks, with a checkpoint at the end of each week and the final submission on 2026-12-14 at 23:59. At each checkpoint the teacher looks at your repository. Checkpoints have no points of their own, but they count in the Git workflow score and in each member's contribution level.
 
 | Week | Dates | Work to finish | Pushed to GitHub by |
 | --- | --- | --- | --- |
@@ -62,22 +62,7 @@ Every subject has the same 9 tasks in two phases, plus Task 10 for the group of 
 
 The README report (10 points) and the Git workflow (5 points) complete the 100 points: see Evaluation.
 
-### Task 8: Standalone script with spark-submit
-
-- Put Tasks 1 and 3 into a standalone script: it loads and cleans the data, computes the tables of Task 3, prints them, and writes each one as a CSV file in `output/`. Its name is given in your subject page.
-- The script creates its own `SparkSession`, reads the data path from the command line, and ends with `spark.stop()`.
-- A small table is written as one CSV file with `table.coalesce(1).write.mode("overwrite").csv("output/<name>", header=True)`.
-
-```bash
-spark-submit \
-    --master "local[*]" \
-    --driver-memory 4g \
-    your_script.py data/
-```
-
-**Evidence:** the full terminal output saved to `output/spark_submit/run.log`.
-
-### Task 9: Performance experiment
+### Task 8: Performance experiment
 
 Measure the run time of your Task 3 on the full dataset under these settings. Run each setting 3 times and report the average. Spark is lazy: time an action such as `count()`, `collect()` or a write, not a transformation.
 
@@ -87,10 +72,6 @@ Measure the run time of your Task 3 on the full dataset under these settings. Ru
 | File format | The data in its original format, then the same data saved and re-read as Parquet. If your data already comes as Parquet, compare it with a CSV copy. |
 
 **Deliverable:** one results table, a screenshot of the Spark UI (`localhost:4040`) showing the stages of one job, and a short explanation of each result.
-
-### Bonus: Cluster execution (+5 points)
-
-Run your script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage. Provide the command and the log.
 
 ## Work distribution
 
@@ -121,7 +102,7 @@ If your name appears on no code, you are treated as a non-contributor.
 
 ## Git workflow and deliverables
 
-Each group submits one GitHub repository. Its name is given in your subject page, for example `flight-delay-group-3`. Add the teacher (`HaboussiCodes`) as a collaborator during week 1.
+Each group submits one GitHub repository. Its name is given in your subject page, for example `flight-delay-group-3`. Add the teacher (`HaboussiCodes`) as a collaborator .
 
 ### Git workflow
 
@@ -134,8 +115,7 @@ Your GitHub username must appear in the commit history with meaningful code chan
 
 ### Deliverables
 
-1. **Notebook** `<Subject>_GroupX.ipynb`: Tasks 1-7, 9 (and 10 for G7) with code, outputs, charts and written analysis, one markdown header per task. It must run from top to bottom without errors.
-2. **Script** (Task 8): the standalone job of Tasks 1 and 3, runnable with `spark-submit`.
+1. **Notebook** `<Subject>_GroupX.ipynb`: Tasks 1-7, 9  with code, outputs, charts and written analysis, one markdown header per task. It must run from top to bottom without errors.
 3. **README.md**, the project report:
    - Team members (names and student IDs)
    - Executive summary (2-3 sentences)
@@ -157,7 +137,7 @@ Do not commit the data. Add `data/` to `.gitignore`: GitHub refuses files larger
 
 ## Evaluation
 
-The group earns a score out of 100 (out of 110 for G7). Each member's grade out of 20 is that score, multiplied by their contribution share, divided by 5 (by 5.5 for G7).
+The group earns a score out of 15.
 
 ### Group score
 
@@ -165,9 +145,9 @@ The group earns a score out of 100 (out of 110 for G7). Each member's grade out 
 | --- | --- | --- |
 | Phase A: PySpark queries (Tasks 1-7) | 10 | Correct results, DataFrame API used where asked, Spark SQL in Task 5, window functions, interpretation |
 | Phase B: Execution and performance (Tasks 8) | 1 | measured and explained results |
-| README report | 10 | All sections present, clear conclusions |
+| README report | 3 | All sections present, clear conclusions |
 | Git workflow | 1 | Branches and Pull Requests used |
-| **Total** | **100** |  |
+| **Total** | **15** |  |
 ### Individual adjustment
 
 | Contribution level | Share of group score |
