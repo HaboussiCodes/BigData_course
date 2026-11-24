@@ -98,11 +98,11 @@ The teacher gives each member one block of tasks, written in the table of the Gr
 
 | Member | Tasks | Phase |
 | --- | --- | --- |
-| A | Tasks 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` | A |
-| B | Tasks 4-5: joins, Spark SQL | A |
-| C | Tasks 6-7: charts of patterns over time, window functions | A |
-| D | Tasks 8-9: `spark-submit` script, performance experiment | B |
-| E (G7 only) | Task 10: extension | Extra |
+| A | Tasks 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |- |
+| B | Tasks 4-5: joins, Spark SQL | - |
+| C | Tasks 6-7: charts of patterns over time, window functions |- |
+| D | Tasks 8: performance experiment | - |
+| E  | Task 9: extension | -|
 
 Task 1 comes first because every other task uses the cleaned data. Member A pushes it during week 1, and the others start from it. The README is written together: each member writes the part about their own tasks.
 
@@ -113,7 +113,7 @@ Every notebook cell or script section starts with a header naming its author:
 ```python
 # ============================================
 # Task 3: Aggregation with groupBy
-# Author: First Last (ID: 12345)
+# Author: First Last name
 # ============================================
 ```
 
@@ -163,10 +163,10 @@ The group earns a score out of 100 (out of 110 for G7). Each member's grade out 
 
 | Component | Points | Details |
 | --- | --- | --- |
-| Phase A: PySpark queries (Tasks 1-7) | 65 | Correct results, DataFrame API used where asked, Spark SQL in Task 5, window functions, interpretation |
-| Phase B: Execution and performance (Tasks 8-9) | 20 | Working `spark-submit`, measured and explained results |
+| Phase A: PySpark queries (Tasks 1-7) | 10 | Correct results, DataFrame API used where asked, Spark SQL in Task 5, window functions, interpretation |
+| Phase B: Execution and performance (Tasks 8) | 1 | measured and explained results |
 | README report | 10 | All sections present, clear conclusions |
-| Git workflow | 5 | Branches and Pull Requests used, weekly checkpoints met |
+| Git workflow | 1 | Branches and Pull Requests used |
 | **Total** | **100** |  |
 | Task 10 (G7 only) | 10 | G7 is scored out of 110 |
 | Bonus: cluster execution | +5 | Any group |
@@ -233,7 +233,7 @@ spark.sparkContext.setLogLevel("WARN")
 | Logs flood the terminal | `spark.sparkContext.setLogLevel("WARN")` |
 | `OutOfMemoryError` | Set `spark.driver.memory` to at most half of your RAM, and work on a sample |
 
-**Google Colab** is accepted for the notebook if you cannot install Java. Start with `!pip install -q "pyspark==3.5.*"` and run `!java -version`. If it shows 21 or later, install Java 17 with `!apt-get install -y -qq openjdk-17-jdk-headless` and set `os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-17-openjdk-amd64"` before starting Spark. Colab deletes your files when the session ends, so keep the data in Google Drive. Task 8 (`spark-submit`) must still run on a real machine of your group.
+**Google Colab** is accepted for the notebook if you cannot install Java. Start with `!pip install -q "pyspark==3.5.*"` and run `!java -version`. If it shows 21 or later, install Java 17 with `!apt-get install -y -qq openjdk-17-jdk-headless` and set `os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-17-openjdk-amd64"` before starting Spark. Colab deletes your files when the session ends, so keep the data in Google Drive. 
 
 ## Datasets
 
