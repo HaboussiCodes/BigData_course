@@ -111,18 +111,18 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and clean: read `flights.csv`, explain the nulls of `ARRIVAL_DELAY`, remove the cancelled and diverted flights, add `DEP_HOUR` and `label` | A | 28 Nov |
-| 2 | Select, filter, sort: the longest delays, Atlanta in July, the number of origin airports | A | 28 Nov |
+| 1 | Load and clean: read `flights.csv`, explain the nulls of `ARRIVAL_DELAY`, remove the cancelled and diverted flights, add `DEP_HOUR` and `label` | A | / |
+| 2 | Select, filter, sort: the longest delays, Atlanta in July, the number of origin airports | A | / |
 | 3 | Aggregate: the punctuality of each airline, the 10 busiest airports | A | 28 Nov |
-| 4 | Joins: airline names, the delay share of each state, unknown airport codes (`left_anti`) | B | 5 Dec |
+| 4 | Joins: airline names, the delay share of each state, unknown airport codes (`left_anti`) | B | / |
 | 5 | Spark SQL: the 10 airports with the highest delay rate | B | 5 Dec |
 | 6 | Charts: the delay rate per month and per departure hour | C | 5 Dec |
-| 7 | Window functions: the worst routes of each airline, the monthly change of the delay rate | C | 5 Dec |
-| 8 | The `spark-submit` script `flight_delay_job.py` (Tasks 1 and 3) | D | 12 Dec |
-| 9 | Performance: `local[1]` against `local[*]`, CSV against Parquet | D | 19 Dec |
-| 10 | Extension: the causes of delays per airline and per airport | E (G7) | 19 Dec |
+| 7 | Window functions: the worst routes of each airline, the monthly change of the delay rate | C | / |
+| 8 | The `spark-submit` script `flight_delay_job.py` (Tasks 1 and 3) | D | / |
+| 9 | Performance: `local[1]` against `local[*]`, CSV against Parquet | D | / |
+| 10 | Extension: the causes of delays per airline and per airport | - |/ |
 
-**Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
+
 
 ## 6. Rules
 
@@ -136,7 +136,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
   # ============================================
   ```
 
-- **Teacher access:** add your teacher (`HaboussiCodes`) as a collaborator of the repository during week 1.
+- **Teacher access:** add your teacher (`HaboussiCodes`) as a collaborator of the repository.
 - **Data:** never commit the data, the Parquet copies or any large file. GitHub refuses files larger than 100 MB.
 - **AI tools:** allowed for debugging errors, conceptual explanations and comments. Generating a whole task or the whole pipeline is not allowed. At the oral check, a student who cannot explain their own code gets zero.
 - **Oral check:** in the first lab session after the deadline, 15 minutes per group: a 5-minute demo of the results, then each member explains a part of their own code.
@@ -205,17 +205,10 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 *2-3 sentences of interpretation.*
 
-## Phase B: execution and performance (Tasks 8-9)
+## Phase B: execution and performance (Tasks 8)
 
-### Task 8 · Standalone script
 
-| Item | Answer |
-|---|---|
-| Command used | `spark-submit --master "local[*]" --driver-memory 4g flight_delay_job.py data/flights.csv` |
-| Log | [`output/spark_submit/run.log`](output/spark_submit/run.log) |
-| Tables written in `output/` | *the CSV folders of Task 3* |
-
-### Task 9 · Performance experiment
+### Task 8 · Performance experiment
 
 *Run time of Task 3 on the full data. Run each setting 3 times and give the average. Time an action (`count()`, `collect()` or a write), not a transformation.*
 
@@ -229,11 +222,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 *One or two sentences per result: what changed, and why.*
 
-### Bonus (+5 points, optional) · Cluster execution
-
-*If you ran the script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage: give the command and the log.*
-
-## Task 10 (G7 only) · Causes of delays
+## Task 10 · Causes of delays
 
 ![Share of delay minutes per cause and per airline](output/task10_causes_per_airline.png)
 
