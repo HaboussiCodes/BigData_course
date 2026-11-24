@@ -20,13 +20,7 @@ Each subject folder holds the full subject, and a `starter/` folder with the two
 
 ## Subjects
 
-The class forms 7 groups.
-
 The 7 subjects are: 1 Flight delays, 2 NYC taxi trip time, 3 Instacart customer segments, 4 Book recommender, 5 Amazon review sentiment, 6 Rain tomorrow, 7 Mobile money fraud. Each one is described in full in its folder: see [The 7 subjects](#the-7-subjects) above.
-
-**Subjects:** drawn at random in the first session. Two groups may swap subjects if both agree, until the end of week 1.
-
-**Tasks:** the teacher decides which member of each group takes which block of tasks, and writes the names in the table below. Members may not swap their tasks without the teacher's agreement.
 
 | Group | Subject | Member A (Tasks 1-3) | Member B (Tasks 4-5) | Member C (Tasks 6-7) | Member D (Tasks 8) | Member E (Task 9) | GitHub repository |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -46,7 +40,7 @@ The project runs over 2 weeks, with a checkpoint at the end of each week and the
 | --- | --- | --- | --- |
 | 1 | - | Form the group, install Spark, create the repository, download the data, Tasks 1-3 | - |
 | 2 | - | Tasks 4-7: Phase A complete | - |
-| 3 | - | Task 8: the script | - |
+| 3 | - | Task 8: performance | - |
 | 4 | - | Task 9 , README report | -|
 | Oral |  after the deadline | 10 minutes per group: 5-minute demo of the results, then each member explains a part of their own code | 16 December 2026 |
 
@@ -54,13 +48,12 @@ The project runs over 2 weeks, with a checkpoint at the end of each week and the
 
 Every subject has the same 9 tasks in two phases, plus Task 10 for the group of 5. The project is mostly about PySpark queries: Tasks 1-7 use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`), except Task 5, which uses Spark SQL. Tasks 1-7 and 10 depend on the subject and are described in its folder. Tasks 8-9 are the same for every group and are described here.
 
-| Phase | Tasks | Points | What you do |
-| --- | --- | --- | --- |
-| A. PySpark queries | 1-7 | 65 | Load and clean the data, filter and sort, aggregate with `groupBy`, join tables, write one Spark SQL query, draw two charts of patterns over time, rank with window functions |
-| B. Execution and performance | 8-9 | 20 | Run Tasks 1 and 3 as a standalone script with `spark-submit`, measure how Spark settings change the run time |
-| Extension (G7 only) | 10 | 10 | An extra query-based analysis specific to the subject |
+| Phase | Tasks |What you do |
+| --- | --- | --- |
+| A. PySpark queries | 1-7 | Load and clean the data, filter and sort, aggregate with `groupBy`, join tables, write one Spark SQL query, draw two charts of patterns over time, rank with window functions |
+| B. Execution and performance | 8 | Measure how Spark settings change the run time |
 
-The README report (10 points) and the Git workflow (5 points) complete the 100 points: see Evaluation.
+
 
 ### Task 8: Performance experiment
 
@@ -85,7 +78,7 @@ The teacher gives each member one block of tasks, written in the table of the Gr
 | D | Tasks 8: performance experiment | - |
 | E  | Task 9 | -|
 
-Task 1 comes first because every other task uses the cleaned data. Member A pushes it during week 1, and the others start from it. The README is written together: each member writes the part about their own tasks.
+Task 1 comes first because every other task uses the cleaned data. The README is written together: each member writes the part about their own tasks.
 
 ### Put your name on your code
 
