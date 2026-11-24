@@ -28,7 +28,7 @@ The 7 subjects are: 1 Flight delays, 2 NYC taxi trip time, 3 Instacart customer 
 
 **Tasks:** the teacher decides which member of each group takes which block of tasks, and writes the names in the table below. Members may not swap their tasks without the teacher's agreement.
 
-| Group | Subject | Member A (Tasks 1-3) | Member B (Tasks 4-5) | Member C (Tasks 6-7) | Member D (Tasks 8-9) | Member E (Task 10, G7 only) | GitHub repository |
+| Group | Subject | Member A (Tasks 1-3) | Member B (Tasks 4-5) | Member C (Tasks 6-7) | Member D (Tasks 8) | Member E (Task 9) | GitHub repository |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | G1 |  |  |  |  |  |  |  |
 | G2 |  |  |  |  |  |  |  |
