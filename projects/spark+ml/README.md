@@ -168,9 +168,6 @@ The group earns a score out of 100 (out of 110 for G7). Each member's grade out 
 | README report | 10 | All sections present, clear conclusions |
 | Git workflow | 1 | Branches and Pull Requests used |
 | **Total** | **100** |  |
-| Task 10 (G7 only) | 10 | G7 is scored out of 110 |
-| Bonus: cluster execution | +5 | Any group |
-
 ### Individual adjustment
 
 | Contribution level | Share of group score |
