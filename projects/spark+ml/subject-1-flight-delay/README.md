@@ -141,10 +141,10 @@ monthly.withColumn("change", F.col("delay_rate") - F.lag("delay_rate").over(w))
 
 **Requirement:** `Window.partitionBy(...).orderBy(...)` with `row_number()` for the routes, and with `lag()` for the months.
 
-## Phase B and Task 10
-- **Task 9:** time your Task 3 on the full `flights.csv`, then on a Parquet copy of the same data.
+## Phase B and Task 8
+- **Task 8:** time your Task 3 on the full `flights.csv`, then on a Parquet copy of the same data.
 
-### Task 10: Causes of delays
+### Task 9: Causes of delays
 
 The columns `AIR_SYSTEM_DELAY`, `SECURITY_DELAY`, `AIRLINE_DELAY`, `LATE_AIRCRAFT_DELAY` and `WEATHER_DELAY` give the minutes of delay due to each cause, for flights 15 minutes late or more.
 
