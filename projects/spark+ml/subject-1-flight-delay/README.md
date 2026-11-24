@@ -162,4 +162,4 @@ The columns `AIR_SYSTEM_DELAY`, `SECURITY_DELAY`, `AIRLINE_DELAY`, `LATE_AIRCRAF
 5. **The label must be 0 or 1:** `F.when(F.col("ARRIVAL_DELAY") >= 15, 1).otherwise(0)`.
 6. **The same column name in two tables.** `airlines.csv` also has a column `AIRLINE`, which holds the name. Rename it before the join: `withColumnRenamed("AIRLINE", "AIRLINE_NAME")`.
 7. **`toPandas()` only on small results.** Aggregate first, then convert.
-8. **A script is not a notebook.** `flight_delay_job.py` creates its own `SparkSession` and ends with `spark.stop()`.
+
