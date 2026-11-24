@@ -100,16 +100,15 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and clean: read `flights.csv`, explain the nulls of `ARRIVAL_DELAY`, remove the cancelled and diverted flights, add `DEP_HOUR` and `label` | A | / |
-| 2 | Select, filter, sort: the longest delays, Atlanta in July, the number of origin airports | A | / |
-| 3 | Aggregate: the punctuality of each airline, the 10 busiest airports | A | 28 Nov |
-| 4 | Joins: airline names, the delay share of each state, unknown airport codes (`left_anti`) | B | / |
-| 5 | Spark SQL: the 10 airports with the highest delay rate | B | 5 Dec |
-| 6 | Charts: the delay rate per month and per departure hour | C | 5 Dec |
-| 7 | Window functions: the worst routes of each airline, the monthly change of the delay rate | C | / |
-| 8 |
-| 9 | Performance: `local[1]` against `local[*]`, CSV against Parquet | D | / |
-| 10 |  the causes of delays per airline and per airport | - |/ |
+| 1 | Load and clean: read `flights.csv`, explain the nulls of `ARRIVAL_DELAY`, remove the cancelled and diverted flights, add `DEP_HOUR` and `label` | - | - |
+| 2 | Select, filter, sort: the longest delays, Atlanta in July, the number of origin airports | - | / |
+| 3 | Aggregate: the punctuality of each airline, the 10 busiest airports | - | - |
+| 4 | Joins: airline names, the delay share of each state, unknown airport codes (`left_anti`) | - | / |
+| 5 | Spark SQL: the 10 airports with the highest delay rate | -| - |
+| 6 | Charts: the delay rate per month and per departure hour | - | - |
+| 7 | Window functions: the worst routes of each airline, the monthly change of the delay rate | - | - |
+| 8 | Performance: `local[1]` against `local[*]`, CSV against Parquet | - | - |
+| 9 |  the causes of delays per airline and per airport | - |- |
 
 
 
@@ -121,14 +120,14 @@ The notebook has one markdown header per task, with the code, the outputs, the c
   ```python
   # ============================================
   # Task 3: Aggregation with groupBy
-  # Author: First Last (ID: 12345)
+  # Author: First Last name
   # ============================================
   ```
 
 - **Teacher access:** add your teacher (`HaboussiCodes`) as a collaborator of the repository.
 - **Data:** never commit the data, the Parquet copies or any large file. GitHub refuses files larger than 100 MB.
 - **AI tools:** allowed for debugging errors, conceptual explanations and comments. Generating a whole task or the whole pipeline is not allowed. At the oral check, a student who cannot explain their own code gets zero.
-- **Oral check:** in the first lab session after the deadline, 15 minutes per group: a 5-minute demo of the results, then each member explains a part of their own code.
+- **Oral check:** after the deadline, 10 minutes per group: a 5-minute demo of the results, then each member explains a part of their own code.
 
 ---
 
