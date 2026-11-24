@@ -2,12 +2,12 @@
 
  Students work in  groups. Each group gets a different subject built on a real public dataset of several million rows. All subjects follow the same two phases, the same deliverables, so every group does comparable work.
 
-## The 7 subjects
+## The subjects
 
 Each subject uses a different real dataset, with the same nine tasks and the same grid: seven PySpark query tasks, the performance experiment. Open a subject to read its full description.
 
 | # | Subject | Domain | Dataset | Size | Data access |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | 1 | [1 · Flight delays](subject-1-flight-delay/) | Air transport | US DOT flights, 2015 | 5.8 M flights | Kaggle account | 
 | 2 | [2 · NYC taxi trip time](subject-2-nyc-taxi/) | City transport | NYC yellow taxi trips, January-March 2024 | About 9 M trips | Free download |
 | 3 | [3 · Instacart segments](subject-3-instacart/) | Retail | Instacart orders, 2017 | 3.4 M orders, 33.8 M basket lines | Kaggle account |
