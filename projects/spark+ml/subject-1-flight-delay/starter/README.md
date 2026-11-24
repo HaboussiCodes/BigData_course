@@ -101,9 +101,9 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | Task | What you do | Member | Push by |
 |---|---|---|---|
 | 1 | Load and clean: read `flights.csv`, explain the nulls of `ARRIVAL_DELAY`, remove the cancelled and diverted flights, add `DEP_HOUR` and `label` | - | - |
-| 2 | Select, filter, sort: the longest delays, Atlanta in July, the number of origin airports | - | / |
+| 2 | Select, filter, sort: the longest delays, Atlanta in July, the number of origin airports | - | - |
 | 3 | Aggregate: the punctuality of each airline, the 10 busiest airports | - | - |
-| 4 | Joins: airline names, the delay share of each state, unknown airport codes (`left_anti`) | - | / |
+| 4 | Joins: airline names, the delay share of each state, unknown airport codes (`left_anti`) | - | - |
 | 5 | Spark SQL: the 10 airports with the highest delay rate | -| - |
 | 6 | Charts: the delay rate per month and per departure hour | - | - |
 | 7 | Window functions: the worst routes of each airline, the monthly change of the delay rate | - | - |
