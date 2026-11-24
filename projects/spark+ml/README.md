@@ -136,9 +136,9 @@ The group earns a score out of 15.
 
 | Component | Points | Details |
 | --- | --- | --- |
-| Phase A: PySpark queries (Tasks 1-7) | 10 | Correct results, DataFrame API used where asked, Spark SQL in Task 5, window functions, interpretation |
+| Phase A: PySpark queries (Tasks 1-7) | 12 | Correct results, DataFrame API used where asked, Spark SQL in Task 5, window functions, interpretation |
 | Phase B: Execution and performance (Tasks 8) | 1 | measured and explained results |
-| README report | 3 | All sections present, clear conclusions |
+| README report | 1 | All sections present, clear conclusions |
 | Git workflow | 1 | Branches and Pull Requests used |
 | **Total** | **15** |  |
 ### Individual adjustment
