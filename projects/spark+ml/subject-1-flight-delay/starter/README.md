@@ -21,10 +21,8 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | A | | | | 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
-| D | | | | 8-9: `spark-submit` script, performance experiment |
-| E (G7 only) | | | | 10: extension |
-
-Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
+| D | | | | 8-9: performance experiment |
+| E | | | | 10:|
 
 ### Week 1 checklist
 
@@ -109,9 +107,9 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | 5 | Spark SQL: the 10 airports with the highest delay rate | B | 5 Dec |
 | 6 | Charts: the delay rate per month and per departure hour | C | 5 Dec |
 | 7 | Window functions: the worst routes of each airline, the monthly change of the delay rate | C | / |
-| 8 | The `spark-submit` script `flight_delay_job.py` (Tasks 1 and 3) | D | / |
+| 8 |
 | 9 | Performance: `local[1]` against `local[*]`, CSV against Parquet | D | / |
-| 10 | Extension: the causes of delays per airline and per airport | - |/ |
+| 10 |  the causes of delays per airline and per airport | - |/ |
 
 
 
@@ -213,7 +211,7 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 *One or two sentences per result: what changed, and why.*
 
-## Task 10 · Causes of delays
+## Task 9 · Causes of delays
 
 ![Share of delay minutes per cause and per airline](output/task10_causes_per_airline.png)
 
@@ -228,5 +226,5 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | A | | 1-3 | | | |
 | B | | 4-5 | | | |
 | C | | 6-7 | | | |
-| D | | 8-9 | | | |
-| E (G7 only) | | 10 | | | |
+| D | | 8 | | | |
+| E | | 9 | | | |
