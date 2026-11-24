@@ -36,7 +36,7 @@ The 7 subjects are: 1 Flight delays, 2 NYC taxi trip time, 3 Instacart customer 
 | G4 |  |  |  |  |  |  |  |
 | G5 |  |  |  |  |  |  |  |
 | G6 |  |  |  |  |  |  |  |
-| G7 (5 members) |  |  |  |  |  |  |  |
+| G7 |  |  |  |  |  |  |  |
 
 ## Calendar
 
