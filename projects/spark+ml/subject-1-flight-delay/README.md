@@ -142,11 +142,9 @@ monthly.withColumn("change", F.col("delay_rate") - F.lag("delay_rate").over(w))
 **Requirement:** `Window.partitionBy(...).orderBy(...)` with `row_number()` for the routes, and with `lag()` for the months.
 
 ## Phase B and Task 10
-
-- **Task 8:** the script is `flight_delay_job.py`. It runs Tasks 1 and 3 and writes the two tables of Task 3 in `output/`. Run it with `spark-submit --master "local[*]" --driver-memory 4g flight_delay_job.py data/flights.csv`.
 - **Task 9:** time your Task 3 on the full `flights.csv`, then on a Parquet copy of the same data.
 
-### Task 10 (G7 only, 10 points): Causes of delays
+### Task 10: Causes of delays
 
 The columns `AIR_SYSTEM_DELAY`, `SECURITY_DELAY`, `AIRLINE_DELAY`, `LATE_AIRCRAFT_DELAY` and `WEATHER_DELAY` give the minutes of delay due to each cause, for flights 15 minutes late or more.
 
