@@ -1,0 +1,11 @@
+# Data and Parquet copies: never committed (GitHub refuses files larger than 100 MB)
+data/
+
+# Jupyter and Python
+.ipynb_checkpoints/
+__pycache__/
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log

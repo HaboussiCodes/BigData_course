@@ -1,258 +1,129 @@
-# PySpark Project: Flight Delay Analytics with Spark + MLlib
+# Big Data Group Projects with PySpark
 
-| Item | Details |
-| --- | --- |
-| Due date | [20december] |
-| Group size | 2-4 students |
-| Submission | One GitHub repository per group |
-| Language | Python (PySpark 3.5+) |
-| Total | 100 points |
+29 students work in 7 groups: six groups of 4 and one group of 5. Each group gets a different subject built on a real public dataset of several million rows. All subjects follow the same two phases, the same deliverables and the same 100-point grid, so every group does comparable work.
 
-## 1. Scenario: From Describing Delays to Predicting Them
+## The 7 subjects
 
-You are the data team of an airline operations centre. The Operations Director has one year of flight records, about 5.8 million flights, and two questions:
+Each subject uses a different real dataset, with the same nine tasks and the same grid: seven PySpark query tasks, then the script and the performance experiment. Open a subject to read its full description.
 
-> "Where and when do our delays happen? And can we predict that a flight will arrive late before it leaves the gate?"
+| # | Subject | Domain | Dataset | Size | Data access | Task 10 (G7) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | [1 · Flight delays](subject-1-flight-delay/) | Air transport | US DOT flights, 2015 | 5.8 M flights | Kaggle account | Causes of delays |
+| 2 | [2 · NYC taxi trip time](subject-2-nyc-taxi/) | City transport | NYC yellow taxi trips, January-March 2024 | About 9 M trips | Free download | Busy hours heatmap |
+| 3 | [3 · Instacart segments](subject-3-instacart/) | Retail | Instacart orders, 2017 | 3.4 M orders, 33.8 M basket lines | Kaggle account | Products bought together |
+| 4 | [4 · Book recommender](subject-4-book-recommender/) | Books | Goodbooks-10k (Goodreads) | 6 M ratings | Free download (GitHub) | To-read lists |
+| 5 | [5 · Amazon review sentiment](subject-5-amazon-reviews/) | Online shopping, text | Amazon Reviews 2023, Video Games | 4.6 M reviews | Free download | Words of unhappy customers |
+| 6 | [6 · Rain tomorrow](subject-6-rain-tomorrow/) | Climate | NOAA daily weather, 2023-2024 | Millions of station-days | Free download | Climate map |
+| 7 | [7 · Mobile money fraud](subject-7-mobile-money-fraud/) | Finance | PaySim mobile money | 6.36 M transactions | Kaggle account | Fraud patterns by amount |
 
-Your mission is to answer both with Apache Spark:
+Each subject folder holds the full subject, and a `starter/` folder with the two files to copy into your group's repository: its `README.md` (your report) and its `.gitignore`.
 
-1. Explore the data with Spark DataFrames and Spark SQL.
-2. Build an MLlib pipeline that predicts whether a flight arrives 15 minutes late or more.
-3. Compare three models and recommend one.
-4. Package the pipeline as a script, run it with `spark-submit`, and measure how Spark settings change the run time.
+## Groups and subjects
 
-## 2. Prerequisites and Local Setup
+The class forms 7 groups. Groups G1 to G6 have 4 members. G7 has 5 members and also does Task 10 (see Work distribution). Each group gets a different subject, so no two groups work on the same data.
 
-The whole project runs on a laptop in `local[*]` mode. No cluster is required.
+The 7 subjects are: 1 Flight delays, 2 NYC taxi trip time, 3 Instacart customer segments, 4 Book recommender, 5 Amazon review sentiment, 6 Rain tomorrow, 7 Mobile money fraud. Each one is described in full in its folder: see [The 7 subjects](#the-7-subjects) above.
 
-**Knowledge:** the Spark lectures and labs on DataFrames, Spark SQL, and MLlib (`Pipeline`, `StringIndexer`, `VectorAssembler`, classifiers, evaluators).
+**Subjects:** drawn at random in the first session. Two groups may swap subjects if both agree, until the end of week 1.
 
-**Software:**
+**Tasks:** the teacher decides which member of each group takes which block of tasks, and writes the names in the table below. Members may not swap their tasks without the teacher's agreement.
 
-| Software | Version | Install |
-| --- | --- | --- |
-| Python | 3.8+ | python.org/downloads |
-| Java (JDK) | 11 or 17 | adoptium.net (Temurin) |
-| PySpark | 3.5+ | `pip install pyspark` |
-| Jupyter | any | `pip install jupyter` |
-| pandas, matplotlib | any | `pip install pandas matplotlib` |
+| Group | Subject | Member A (Tasks 1-3) | Member B (Tasks 4-5) | Member C (Tasks 6-7) | Member D (Tasks 8-9) | Member E (Task 10, G7 only) | GitHub repository |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| G1 |  |  |  |  |  |  |  |
+| G2 |  |  |  |  |  |  |  |
+| G3 |  |  |  |  |  |  |  |
+| G4 |  |  |  |  |  |  |  |
+| G5 |  |  |  |  |  |  |  |
+| G6 |  |  |  |  |  |  |  |
+| G7 (5 members) |  |  |  |  |  |  |  |
 
-**Quick check:**
+## Calendar
 
-```bash
-python3 --version     # 3.8+
-java -version         # 11.x or 17.x, required by Spark
-python3 -c "
-from pyspark.sql import SparkSession
-spark = SparkSession.builder.master('local[*]').getOrCreate()
-print(f'Spark {spark.version} is working!')
-spark.stop()
-"
-```
+The project runs over 4 weeks, with a checkpoint at the end of each week and the final submission on 2026-12-19 at 23:59. At each checkpoint the teacher looks at your repository. Checkpoints have no points of their own, but they count in the Git workflow score and in each member's contribution level.
 
-**Common setup issues:**
+| Week | Dates | Work to finish | Pushed to GitHub by |
+| --- | --- | --- | --- |
+| 1 | 22-28 Nov | Form the group, install Spark, create the repository, download the data, Tasks 1-3 | 2026-11-28 |
+| 2 | 29 Nov-5 Dec | Tasks 4-7: Phase A complete | 2026-12-05 |
+| 3 | 6-12 Dec | Task 8: the script | 2026-12-12 |
+| 4 | 13-19 Dec | Task 9 (and Task 10 for G7), README report | 2026-12-19, final submission |
+| Oral | First lab session after the deadline | 15 minutes per group: 5-minute demo of the results, then each member explains a part of their own code | To schedule |
 
-| Problem | Solution |
-| --- | --- |
-| `java: command not found` | Install JDK 11 or 17 |
-| `JAVA_HOME is not set` | Set `JAVA_HOME` to your JDK path |
-| `Py4JJavaError` when Spark starts | Wrong Java version; PySpark 3.5 needs Java 11 or 17 |
-| Logs flood the terminal | `spark.sparkContext.setLogLevel("WARN")` |
-| `OutOfMemoryError` | Start with `.config("spark.driver.memory", "4g")` and work on a sample |
+## The two phases
 
-If you cannot install Java, Google Colab is an accepted fallback for the notebook (`!pip install pyspark`). Task 9 (`spark-submit`) must still run on a real machine in your group.
+Every subject has the same 9 tasks in two phases, plus Task 10 for the group of 5. The project is mostly about PySpark queries: Tasks 1-7 use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`), except Task 5, which uses Spark SQL. Tasks 1-7 and 10 depend on the subject and are described in its folder. Tasks 8-9 are the same for every group and are described here.
 
-## 3. Dataset
+| Phase | Tasks | Points | What you do |
+| --- | --- | --- | --- |
+| A. PySpark queries | 1-7 | 65 | Load and clean the data, filter and sort, aggregate with `groupBy`, join tables, write one Spark SQL query, draw two charts of patterns over time, rank with window functions |
+| B. Execution and performance | 8-9 | 20 | Run Tasks 1 and 3 as a standalone script with `spark-submit`, measure how Spark settings change the run time |
+| Extension (G7 only) | 10 | 10 | An extra query-based analysis specific to the subject |
 
-The project uses the public "2015 Flight Delays and Cancellations" dataset from the US Department of Transportation, available on Kaggle. It has three CSV files:
+The README report (10 points) and the Git workflow (5 points) complete the 100 points: see Evaluation.
 
-| File | Content | Size |
-| --- | --- | --- |
-| `flights.csv` | One row per flight in 2015 | About 5.8 million rows |
-| `airlines.csv` | Airline code and name | 14 rows |
-| `airports.csv` | Airport code, name, city, state | About 320 rows |
+### Task 8: Standalone script with spark-submit
 
-Columns of `flights.csv` used in this project:
-
-| Column | Type | Use |
-| --- | --- | --- |
-| `MONTH` | int | Feature + analysis |
-| `DAY_OF_WEEK` | int (1 = Monday) | Feature + analysis |
-| `AIRLINE` | string (code) | Feature + analysis, joins `airlines.csv` |
-| `ORIGIN_AIRPORT` | string (code) | Feature + analysis, joins `airports.csv` |
-| `DESTINATION_AIRPORT` | string (code) | Analysis (routes) |
-| `SCHEDULED_DEPARTURE` | int, HHMM | Extract departure hour |
-| `DISTANCE` | int (miles) | Feature |
-| `ARRIVAL_DELAY` | int (minutes) | Builds the label |
-| `CANCELLED`, `DIVERTED` | 0/1 | Filter these flights out |
-
-**Label:** `label = 1` if `ARRIVAL_DELAY >= 15`, otherwise `0`.
-
-**Development sample:** build and debug everything on a 1% sample, then run the final notebook on the full file.
-
-```python
-df = spark.read.csv("data/flights.csv", header=True, inferSchema=True)
-dev = df.sample(0.01, seed=42)
-```
-
-Do not commit the CSV files to GitHub. Add `data/` to `.gitignore`.
-
-## 4. Phase A: Spark DataFrame and SQL Analytics (30 points)
-
-### Task 1: Load, Inspect, Clean
-
-- Load `flights.csv` with a header. Print the schema and the row count.
-- Count the nulls in `ARRIVAL_DELAY`. Explain where they come from.
-- Remove cancelled and diverted flights.
-- Add `DEP_HOUR` (0-23) from `SCHEDULED_DEPARTURE`, and the `label` column.
-
-**Deliverable:** row count before and after cleaning, and `show(5)` of the cleaned DataFrame.
-
-### Task 2: Delays by Airline (DataFrame API)
-
-- For each airline: number of flights, average arrival delay, percentage of delayed flights.
-- Join with `airlines.csv` to show the airline name instead of the code.
-
-```python
-df.groupBy("AIRLINE").agg(
-    F.count("*").alias("flights"),
-    F.avg("ARRIVAL_DELAY").alias("avg_delay"),
-    F.avg("label").alias("delay_rate"),
-).orderBy(F.col("delay_rate").desc()).show()
-```
-
-**Requirement:** DataFrame API only. Which airline is the most punctual? The least?
-
-### Task 3: Airport Hotspots (Spark SQL)
-
-- Register the DataFrames as temporary views.
-- With `spark.sql()`, list the 10 origin airports with the highest delay rate, among airports with at least 10,000 departures. Show the airport name and city from `airports.csv`.
-
-**Requirement:** `spark.sql()` only, with a `JOIN`, a `GROUP BY` and a `HAVING`.
-
-### Task 4: When Do Delays Happen? (DataFrame + Visualization)
-
-- Delay rate per month, per day of week, and per departure hour.
-- Convert each result with `.toPandas()` and plot it with matplotlib: three charts.
-
-**Requirement:** interpret the charts in 3-5 sentences. Why does the delay rate change during the day?
-
-### Task 5: Worst Routes per Airline (Window Function)
-
-- A route is a pair (`ORIGIN_AIRPORT`, `DESTINATION_AIRPORT`).
-- For each airline, show its 3 routes with the highest average arrival delay, among routes with at least 500 flights.
-
-**Requirement:** use `Window.partitionBy(...).orderBy(...)` with `row_number()` or `rank()`.
-
-## 5. Phase B: Spark MLlib, Delay Prediction (35 points)
-
-Build a complete ML pipeline that predicts `label` (arrival delay of 15 minutes or more).
-
-**Rule: no data leakage.** The prediction is made before departure. Only columns known before departure are allowed as features. `DEPARTURE_DELAY`, `TAXI_OUT`, `AIR_TIME` and all other delay columns are forbidden.
-
-### Task 6: Feature Engineering Pipeline
-
-Build a Spark ML `Pipeline` with:
-
-- A new column `origin_grp`: the airport code for the 50 busiest origin airports, `"OTHER"` for the rest.
-- `StringIndexer` for `AIRLINE` and `origin_grp`, with `handleInvalid="skip"`.
-- `VectorAssembler` combining `MONTH`, `DAY_OF_WEEK`, `DEP_HOUR`, `DISTANCE`, `airline_index`, `origin_index` into `features`.
-- Train/test split: 80/20 with `seed=42`.
-
-Train on a 10% sample of the cleaned data (`df.sample(0.10, seed=42)`) so that training fits in laptop memory.
-
-**Deliverable:** the `features` column for 5 rows, with an explanation of each position in the vector. Report the share of delayed flights in the training set.
-
-### Task 7: Train and Evaluate Three Models
-
-| Model | Key parameters |
-| --- | --- |
-| Logistic Regression | `maxIter=100`, `regParam=0.01` |
-| Random Forest | `numTrees=50`, `maxDepth=8`, `maxBins=64` |
-| Gradient-Boosted Trees | `maxIter=30`, `maxDepth=5`, `maxBins=64` |
-
-For each model, report on the test set:
-
-- AUC-ROC, accuracy, F1, precision, recall
-- Confusion matrix (TN, FP, FN, TP)
-- Training time in seconds
-
-Also report the accuracy of a baseline that always predicts "on time".
-
-**Deliverable:** one comparison table with the baseline and the three models. Answer: why is accuracy alone a misleading metric on this dataset?
-
-### Task 8: Interpretation and Tuning
-
-- Extract and plot the feature importances of the Random Forest.
-- Tune the Random Forest with `CrossValidator` (3 folds) on a grid of at least 4 combinations of `maxDepth` and `numTrees`. Report the best parameters and the AUC gain.
-- Save the best model with `model.write().overwrite().save("output/best_model")`.
-
-**Deliverable:** bar chart of importances, plus written answers:
-
-1. Which feature is the most important? Does it agree with your findings in Tasks 2-4?
-2. Why does Logistic Regression score lower than the tree models here?
-3. Which model do you recommend to the Operations Director, and why?
-
-## 6. Phase C: Execution and Performance (20 points)
-
-### Task 9: Standalone Script with spark-submit
-
-- Convert Phase B (Tasks 6-8, without the cross-validation) into a standalone script `flight_delay_ml.py`.
-- The script creates its own `SparkSession`, reads the data path from the command line, runs the pipeline, and prints the comparison table.
+- Put Tasks 1 and 3 into a standalone script: it loads and cleans the data, computes the tables of Task 3, prints them, and writes each one as a CSV file in `output/`. Its name is given in your subject page.
+- The script creates its own `SparkSession`, reads the data path from the command line, and ends with `spark.stop()`.
+- A small table is written as one CSV file with `table.coalesce(1).write.mode("overwrite").csv("output/<name>", header=True)`.
 
 ```bash
 spark-submit \
     --master "local[*]" \
     --driver-memory 4g \
-    flight_delay_ml.py data/flights.csv
+    your_script.py data/
 ```
 
-**Evidence:** full terminal output saved to `output/spark_submit/run.log`.
+**Evidence:** the full terminal output saved to `output/spark_submit/run.log`.
 
-### Task 10: Performance Experiment
+### Task 9: Performance experiment
 
-Measure the run time of Task 2 on the full dataset under these settings. Run each one 3 times and report the average.
+Measure the run time of your Task 3 on the full dataset under these settings. Run each setting 3 times and report the average. Spark is lazy: time an action such as `count()`, `collect()` or a write, not a transformation.
 
 | Experiment | Settings to compare |
 | --- | --- |
-| Parallelism | `local[1]`, `local[2]`, `local[*]` |
-| File format | CSV, then the same data saved and re-read as Parquet |
-| Caching | Run Tasks 2-4 in sequence, with and without `df.cache()` |
-| Shuffle partitions | `spark.sql.shuffle.partitions` = 8, 200 |
+| Parallelism | `local[1]`, then `local[*]` |
+| File format | The data in its original format, then the same data saved and re-read as Parquet. If your data already comes as Parquet, compare it with a CSV copy. |
 
 **Deliverable:** one results table, a screenshot of the Spark UI (`localhost:4040`) showing the stages of one job, and a short explanation of each result.
 
-### Bonus: Cluster Execution (+5 points)
+### Bonus: Cluster execution (+5 points)
 
-Run `flight_delay_ml.py` on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage. Provide the command and the log.
+Run your script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage. Provide the command and the log.
 
-## 7. Work Distribution and Git Workflow
+## Work distribution
 
-### One Student, One Set of Tasks
-
-Every member must commit code for their assigned tasks. Suggested distribution for a 4-person team:
+The teacher gives each member one block of tasks, written in the table of the Groups and subjects section. Each member commits the code for their own block. Everyone must still understand the whole project: at the oral check, the teacher can ask any member about any task.
 
 | Member | Tasks | Phase |
 | --- | --- | --- |
-| Member A | Tasks 1-3 (cleaning, airlines, Spark SQL) | A |
-| Member B | Tasks 4-5 (temporal analysis, window function) | A |
-| Member C | Tasks 6-8 (ML pipeline, evaluation, tuning) | B |
-| Member D | Tasks 9-10 (script, performance experiment) | C |
+| A | Tasks 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` | A |
+| B | Tasks 4-5: joins, Spark SQL | A |
+| C | Tasks 6-7: charts of patterns over time, window functions | A |
+| D | Tasks 8-9: `spark-submit` script, performance experiment | B |
+| E (G7 only) | Task 10: extension | Extra |
 
-### Put Your Name on Your Code
+Task 1 comes first because every other task uses the cleaned data. Member A pushes it during week 1, and the others start from it. The README is written together: each member writes the part about their own tasks.
+
+### Put your name on your code
 
 Every notebook cell or script section starts with a header naming its author:
 
 ```python
 # ============================================
-# Task 6: Feature Engineering Pipeline
+# Task 3: Aggregation with groupBy
 # Author: First Last (ID: 12345)
 # ============================================
 ```
 
 If your name appears on no code, you are treated as a non-contributor.
 
-### Git Workflow
+## Git workflow and deliverables
+
+Each group submits one GitHub repository. Its name is given in your subject page, for example `flight-delay-group-3`. Add the teacher (`HaboussiCodes`) as a collaborator during week 1.
+
+### Git workflow
 
 1. Create a branch for your task: `git checkout -b task6-yourname`
 2. Commit your work in small steps as you progress.
@@ -261,70 +132,129 @@ If your name appears on no code, you are treated as a non-contributor.
 
 Your GitHub username must appear in the commit history with meaningful code changes. One large commit at the end does not count.
 
-## 8. Deliverables
+### Deliverables
 
-1. **Notebook** `Flight_Delay_GroupX.ipynb`: Tasks 1-8 and 10 with code, output, charts and written analysis, one markdown header per task.
-2. **Script** `flight_delay_ml.py`: standalone Phase B pipeline, runnable with `spark-submit`.
+1. **Notebook** `<Subject>_GroupX.ipynb`: Tasks 1-7, 9 (and 10 for G7) with code, outputs, charts and written analysis, one markdown header per task. It must run from top to bottom without errors.
+2. **Script** (Task 8): the standalone job of Tasks 1 and 3, runnable with `spark-submit`.
 3. **README.md**, the project report:
-   - Team members (names + IDs)
+   - Team members (names and student IDs)
    - Executive summary (2-3 sentences)
    - Main findings of Phase A, with the charts
-   - ML results: comparison table, best model, interpretation
    - Performance experiment table and conclusions
    - Member contributions table
 
-Add the instructor ([GitHub username]) as a collaborator on the repository.
-
-```
-flight-delay-group-X/
+```text
+subject-name-group-X/
 ├── README.md
-├── Flight_Delay_GroupX.ipynb
-├── flight_delay_ml.py
-├── output/          <- charts, logs, screenshots, saved model
-├── data/            <- CSV files, not committed (.gitignore)
+├── Subject_GroupX.ipynb
+├── subject_job.py
+├── output/          <- charts, logs, screenshots
+├── data/            <- raw data, never committed (.gitignore)
 └── .gitignore
 ```
 
-## 9. Evaluation Criteria
+Do not commit the data. Add `data/` to `.gitignore`: GitHub refuses files larger than 100 MB.
 
-### Group Score
+## Evaluation
+
+The group earns a score out of 100 (out of 110 for G7). Each member's grade out of 20 is that score, multiplied by their contribution share, divided by 5 (by 5.5 for G7).
+
+### Group score
 
 | Component | Points | Details |
 | --- | --- | --- |
-| Phase A: DataFrame and SQL analytics (Tasks 1-5) | 30 | Correct results, Spark SQL and window function used, interpretation |
-| Phase B: ML pipeline (Tasks 6-8) | 35 | No leakage, 3 models evaluated, tuning, interpretation |
-| Phase C: Execution and performance (Tasks 9-10) | 20 | Working `spark-submit`, measured and explained results |
+| Phase A: PySpark queries (Tasks 1-7) | 65 | Correct results, DataFrame API used where asked, Spark SQL in Task 5, window functions, interpretation |
+| Phase B: Execution and performance (Tasks 8-9) | 20 | Working `spark-submit`, measured and explained results |
 | README report | 10 | All sections present, clear conclusions |
-| Git workflow | 5 | Branches and Pull Requests used |
-| **Total** | **100** | Bonus: +5 for cluster execution |
+| Git workflow | 5 | Branches and Pull Requests used, weekly checkpoints met |
+| **Total** | **100** |  |
+| Task 10 (G7 only) | 10 | G7 is scored out of 110 |
+| Bonus: cluster execution | +5 | Any group |
 
-### Individual Adjustment
-
-The group score is the base. Each member's grade is adjusted by their personal GitHub contribution and by the oral check.
+### Individual adjustment
 
 | Contribution level | Share of group score |
 | --- | --- |
-| Strong: regular commits, PRs, code authorship | 100% |
+| Strong: regular commits, Pull Requests, code authorship | 100% |
 | Moderate: some commits, took part in reviews | 70-90% |
 | Minimal: few or trivial commits | 30-60% |
 | No commits | 0% |
 
-During the oral check, each student explains a part of their own code chosen by the instructor. A student who cannot explain their code receives zero.
+During the oral check, each student explains a part of their own code chosen by the teacher. A student who cannot explain their code receives zero.
 
-## 10. Hints and Common Pitfalls
+### Grade out of 20
 
-1. **Start on the 1% sample.** Debugging on 58,000 rows is far faster than on 5.8 million. Switch to the full file only when the code works.
-2. **Extracting the hour.** `SCHEDULED_DEPARTURE` is an integer in HHMM form (5 means 00:05, 1430 means 14:30). Use `F.floor(F.col("SCHEDULED_DEPARTURE") / 100)`.
-3. **October airport codes.** In the October rows, airports appear as 5-digit numeric IDs instead of 3-letter codes. Detect this in Task 1 and state how you handle it (for example, exclude those rows from airport analyses).
-4. **Label must be numeric.** MLlib expects 0/1, not a boolean: `F.when(F.col("ARRIVAL_DELAY") >= 15, 1).otherwise(0)`.
-5. **`maxBins` for tree models.** A tree needs `maxBins` at least equal to the number of categories of every indexed feature. This is why Task 6 groups airports into 51 values and Task 7 sets `maxBins=64`.
-6. **Imbalanced classes.** Most flights are on time. Look at precision, recall and the confusion matrix, not only accuracy.
-7. **Cache the training data.** `train_df.cache()` avoids re-reading the CSV at every iteration.
-8. **Spark is lazy.** A transformation takes no time; only an action (`count()`, `show()`, `collect()`) triggers the work. Time the action in Task 10.
-9. **`toPandas()` only on small results.** Aggregate first, then convert. Never call it on the full DataFrame.
-10. **A script is not a notebook.** `flight_delay_ml.py` cannot use `display()` or notebook variables, and must end with `spark.stop()`.
+```math
+\text{grade} = \min\left(20,\ \frac{\text{group score} \times \text{share}}{5}\right) \qquad (\text{divide by } 5.5 \text{ for G7})
+```
 
-## 11. AI Usage Policy
+Example: a group scores 82 points plus the 5-point bonus, so 87. A member with a moderate contribution at 80% gets 87 × 0.8 ÷ 5 = 13.92 out of 20.
+
+## Setup
+
+The whole project runs on a laptop in `local[*]` mode: no cluster is needed. All groups use the same versions, so results and errors can be compared. This combination was tested on 20 November 2026.
+
+| Software | Version | Install |
+| --- | --- | --- |
+| Java (JDK) | 17, not 21 or later | adoptium.net, Temurin 17 LTS |
+| Python | 3.11 | python.org/downloads |
+| PySpark | 3.5.x | `pip install "pyspark==3.5.*"` |
+| pandas, matplotlib, pyarrow, Jupyter | pandas below 3 | `pip install "pandas<3" matplotlib pyarrow jupyter` |
+
+**Quick check:**
+
+```bash
+java -version      # must print 17.x
+python --version   # 3.11.x
+python -c "from pyspark.sql import SparkSession; s = SparkSession.builder.master('local[*]').getOrCreate(); print('Spark', s.version, 'works'); s.stop()"
+```
+
+**First cell of every notebook:**
+
+```python
+import os, sys
+os.environ["PYSPARK_PYTHON"] = sys.executable   # avoids worker errors on Windows
+from pyspark.sql import SparkSession, functions as F
+spark = (SparkSession.builder.master("local[*]").appName("project")
+         .config("spark.driver.memory", "4g")
+         .getOrCreate())
+spark.sparkContext.setLogLevel("WARN")
+```
+
+**Common setup issues:**
+
+| Problem | Solution |
+| --- | --- |
+| `java: command not found` or `JAVA_HOME is not set` | Install JDK 17 and set `JAVA_HOME` to its folder |
+| `Py4JJavaError` when Spark starts, or `sun.misc.Unsafe ... not available` in `toPandas()` | Wrong Java version: PySpark 3.5 needs Java 17 (or 11), not 21 or later |
+| Windows: `HADOOP_HOME and hadoop.home.dir are unset`, or `UnsatisfiedLinkError` when writing a file | Copy `winutils.exe` and `hadoop.dll` from a `hadoop-3.3.x/bin` folder of [github.com/cdarlint/winutils](https://github.com/cdarlint/winutils) into `C:\hadoop\bin`, set `HADOOP_HOME=C:\hadoop`, add `%HADOOP_HOME%\bin` to `PATH`, open a new terminal |
+| Windows: `Python worker failed to connect back` | Set `PYSPARK_PYTHON` as in the first cell above |
+| `FutureWarning` about pandas 3, or errors in `toPandas()` | `pip install "pandas<3"` |
+| Logs flood the terminal | `spark.sparkContext.setLogLevel("WARN")` |
+| `OutOfMemoryError` | Set `spark.driver.memory` to at most half of your RAM, and work on a sample |
+
+**Google Colab** is accepted for the notebook if you cannot install Java. Start with `!pip install -q "pyspark==3.5.*"` and run `!java -version`. If it shows 21 or later, install Java 17 with `!apt-get install -y -qq openjdk-17-jdk-headless` and set `os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-17-openjdk-amd64"` before starting Spark. Colab deletes your files when the session ends, so keep the data in Google Drive. Task 8 (`spark-submit`) must still run on a real machine of your group.
+
+## Datasets
+
+Each subject uses one public dataset. Download it in week 1, put it in the `data/` folder of your repository, and never commit it. The exact download steps are in your subject page; this table gathers them.
+
+| # | Subject | Dataset | Files to download | Account | Link |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Flight delays | 2015 Flight Delays and Cancellations (US DOT), 5.8 million flights | `flights.csv`, `airlines.csv`, `airports.csv` | Kaggle | [kaggle.com/datasets/usdot/flight-delays](https://www.kaggle.com/datasets/usdot/flight-delays) |
+| 2 | NYC taxi trip time | NYC yellow taxi trips, January to March 2024, about 9 million trips | `yellow_tripdata_2024-01.parquet` to `-03`, `taxi_zone_lookup.csv` | None | [TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) |
+| 3 | Instacart segments | Instacart Online Grocery Shopping 2017, 3.4 million orders | The six CSV files | Kaggle, and accept the competition rules once | [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis/data) |
+| 4 | Book recommender | goodbooks-10k (Goodreads), 6 million ratings | `ratings.csv`, `books.csv`, `to_read.csv`, `book_tags.csv`, `tags.csv` | None | [github.com/zygmuntz/goodbooks-10k](https://github.com/zygmuntz/goodbooks-10k) |
+| 5 | Amazon review sentiment | Amazon Reviews 2023, Video Games category, 4.6 million reviews | `Video_Games.jsonl.gz`, `meta_Video_Games.jsonl.gz` | None | [Amazon Reviews 2023](https://amazon-reviews-2023.github.io) |
+| 6 | Rain tomorrow | NOAA Global Surface Summary of the Day, 2023 and 2024 | `2023.tar.gz`, `2024.tar.gz`, `isd-history.csv` | None | [NCEI GSOD archive](https://www.ncei.noaa.gov/data/global-summary-of-the-day/archive/) |
+| 7 | Mobile money fraud | PaySim synthetic mobile-money transactions, 6.36 million rows | The CSV file whose name starts with `PS_` | Kaggle | [kaggle.com/datasets/ealaxi/paysim1](https://www.kaggle.com/datasets/ealaxi/paysim1) |
+
+- **Kaggle (Subjects 1, 3 and 7):** create a free account on kaggle.com, open the link, and click **Download**. The files come as one `.zip`: unzip it into `data/`.
+- **No account (Subjects 2, 4, 5 and 6):** the `curl` commands of your subject page download everything. On Windows, run them in Git Bash.
+- **Disk space:** keep about 5 GB free, for the raw files and the Parquet copies of Tasks 1 and 9.
+- **A slow or blocked connection:** one member downloads the files once and shares them inside the group (a USB stick or a shared drive), never through GitHub.
+
+## AI usage policy
 
 - **Allowed:** debugging errors, conceptual explanations, generating comments.
 - **Prohibited:** generating entire tasks or the whole pipeline.
