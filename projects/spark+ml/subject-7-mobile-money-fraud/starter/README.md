@@ -44,7 +44,7 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 
 ## 2. Set up your computer
 
-The whole project runs on a laptop in `local[*]` mode: no cluster is needed. Every member installs the same versions.
+The whole project runs on a laptop in `local[*]` mode. Every member installs the same versions.
 
 | Software | Version | Install |
 |---|---|---|
