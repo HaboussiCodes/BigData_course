@@ -1,6 +1,6 @@
 # Instacart Customer Segments · Group X
 
-**Big Data with PySpark · group project · 22 November to 19 December 2026 · Subject 3**
+**Big Data with PySpark · group project · Subject 3**
 
 > Replace **X** with your group number, in this file and in the file names.
 
@@ -113,7 +113,7 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | 6 | Charts: orders per hour of the day and per day of the week |- | - |
 | 7 | Window functions: the share of each product in its department, the top 3 products of each department | - | - |
 | 8 | Performance: `local[1]` against `local[*]`, CSV against Parquet | - | - |
-| 10 |  the products bought together | - | - |
+| 9 |  the products bought together | - | - |
 
 **Points (out of 15):** 
 
