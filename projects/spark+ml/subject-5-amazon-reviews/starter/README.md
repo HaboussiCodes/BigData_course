@@ -93,8 +93,7 @@ The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/main/pr
 ```text
 amazon-reviews-group-X/
 ├── README.md                     <- this file, completed as your report
-├── Amazon_Reviews_GroupX.ipynb   <- Tasks 1-7 and 9 (and 10 for G7)
-├── review_sentiment_job.py       <- Task 8
+├── Amazon_Reviews_GroupX.ipynb   <- Tasks 
 ├── output/                       <- charts, logs, screenshots
 ├── data/                         <- the dataset, never committed
 └── .gitignore
