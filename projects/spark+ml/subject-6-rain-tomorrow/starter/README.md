@@ -22,7 +22,7 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
 | D | | | | 8: performance experiment |
-| E | | | | 9: |
+| E | | | | 9 |
 
 Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
 
@@ -122,17 +122,16 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
 | 1 | Load and clean: read all the station files as strings, replace the missing-value codes, convert to °C, add `rain`, save a Parquet copy | A | 28 Nov |
-| 2 | Select, filter, sort: the hottest days, days above 45 °C, the Algiers stations | A | 28 Nov |
-| 3 | Aggregate: days, temperature and rain per station, stations and rows per year | A | 28 Nov |
-| 4 | Joins: countries from `isd-history.csv`, the rainiest and driest countries, stations missing from the list (`left_anti`) | B | 5 Dec |
-| 5 | Spark SQL: Algeria from north to south | B | 5 Dec |
-| 6 | Charts: the seasons in Algiers | C | 5 Dec |
-| 7 | Window functions: the 3 hottest days of each Algerian station, daily temperature drops in Algiers | C | 5 Dec |
-| 8 | The `spark-submit` script `rain_tomorrow_job.py` (Tasks 1 and 3) | D | 12 Dec |
-| 9 | Performance: `local[1]` against `local[*]`, small CSV files against Parquet | D | 19 Dec |
-| 10 | Extension: a climate map of the world | E (G7) | 19 Dec |
+| 2 | Select, filter, sort: the hottest days, days above 45 °C, the Algiers stations | - | - |
+| 3 | Aggregate: days, temperature and rain per station, stations and rows per year | - | - |
+| 4 | Joins: countries from `isd-history.csv`, the rainiest and driest countries, stations missing from the list (`left_anti`) | - | - |
+| 5 | Spark SQL: Algeria from north to south | - | - |
+| 6 | Charts: the seasons in Algiers | - | - |
+| 7 | Window functions: the 3 hottest days of each Algerian station, daily temperature drops in Algiers | - | - |
+| 8 | Performance: `local[1]` against `local[*]`, small CSV files against Parquet | - | - |
+| 9 | a climate map of the world | - | - |
 
-**Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
+**Points (out of 15):** 
 
 ## 6. Rules
 
