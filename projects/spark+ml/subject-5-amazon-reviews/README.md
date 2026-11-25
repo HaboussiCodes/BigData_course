@@ -41,7 +41,7 @@ Fields used in this project:
 | `helpful_vote`, `verified_purchase` | long, boolean | Analysis |
 | Metadata: `title`, `store`, `price` | string, string, double | Analysis |
 
-## Phase A: PySpark queries (65 points)
+## Phase A: PySpark queries
 
 Use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`) in every task, except Task 5, which uses Spark SQL.
 
