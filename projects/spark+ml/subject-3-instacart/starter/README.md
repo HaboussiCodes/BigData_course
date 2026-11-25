@@ -21,8 +21,8 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | A | | | | 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
-| D | | | | 8-9: `spark-submit` script, performance experiment |
-| E (G7 only) | | | | 10: extension |
+| D | | | | 8: performance experiment |
+| E | | | | 9 |
 
 Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
 
@@ -101,31 +101,21 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 **Notebook:** start `jupyter notebook`, open `Instacart_GroupX.ipynb`, then restart the kernel and run all the cells.
 
-**Script (Task 8):** from the repository folder (Git Bash on Windows), save the full terminal output as evidence:
-
-```bash
-mkdir -p output/spark_submit
-spark-submit --master "local[*]" --driver-memory 4g instacart_segments_job.py data/ 2>&1 | tee output/spark_submit/run.log
-```
-
-The script creates its own `SparkSession`, reads the data path from the command line (`sys.argv[1]`), and ends with `spark.stop()`.
-
 ## 5. Tasks, owners and deadlines
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and inspect: read the four files used, count the orders of each `eval_set`, explain the nulls of `days_since_prior_order` | A | 28 Nov |
-| 2 | Select, filter, sort: organic products, morning orders, customers with 100 orders | A | 28 Nov |
-| 3 | Aggregate: basket sizes, orders per day of the week | A | 28 Nov |
-| 4 | Joins: build and save `lines`, reorder rate per department, products never ordered (`left_anti`) | B | 5 Dec |
-| 5 | Spark SQL: the 10 most popular products | B | 5 Dec |
-| 6 | Charts: orders per hour of the day and per day of the week | C | 5 Dec |
-| 7 | Window functions: the share of each product in its department, the top 3 products of each department | C | 5 Dec |
-| 8 | The `spark-submit` script `instacart_segments_job.py` (Tasks 1 and 3) | D | 12 Dec |
-| 9 | Performance: `local[1]` against `local[*]`, CSV against Parquet | D | 19 Dec |
-| 10 | Extension: the products bought together | E (G7) | 19 Dec |
+| 1 | Load and inspect: read the four files used, count the orders of each `eval_set`, explain the nulls of `days_since_prior_order` | - | - |
+| 2 | Select, filter, sort: organic products, morning orders, customers with 100 orders | - | - |
+| 3 | Aggregate: basket sizes, orders per day of the week | - | - |
+| 4 | Joins: build and save `lines`, reorder rate per department, products never ordered (`left_anti`) | - | - |
+| 5 | Spark SQL: the 10 most popular products | - | - |
+| 6 | Charts: orders per hour of the day and per day of the week |- | - |
+| 7 | Window functions: the share of each product in its department, the top 3 products of each department | - | - |
+| 8 | Performance: `local[1]` against `local[*]`, CSV against Parquet | - | - |
+| 10 |  the products bought together | - | - |
 
-**Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
+**Points (out of 15):** 
 
 ## 6. Rules
 
@@ -135,7 +125,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
   ```python
   # ============================================
   # Task 3: Aggregation with groupBy
-  # Author: First Last (ID: 12345)
+  # Author: First Last name
   # ============================================
   ```
 
@@ -208,17 +198,9 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 *2-3 sentences of interpretation.*
 
-## Phase B: execution and performance (Tasks 8-9)
+## Phase B: execution and performance (Tasks 8)
 
-### Task 8 · Standalone script
-
-| Item | Answer |
-|---|---|
-| Command used | `spark-submit --master "local[*]" --driver-memory 4g instacart_segments_job.py data/` |
-| Log | [`output/spark_submit/run.log`](output/spark_submit/run.log) |
-| Tables written in `output/` | *the CSV folders of Task 3* |
-
-### Task 9 · Performance experiment
+### Task 8 · Performance experiment
 
 *Run time of Task 3 on the full data. Run each setting 3 times and give the average. Time an action (`count()`, `collect()` or a write), not a transformation.*
 
@@ -232,11 +214,8 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 *One or two sentences per result: what changed, and why.*
 
-### Bonus (+5 points, optional) · Cluster execution
 
-*If you ran the script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage: give the command and the log.*
-
-## Task 10 (G7 only) · Products bought together
+## Task 9· Products bought together
 
 *The 10 most frequent pairs of products in the same order (5% of the prior orders).*
 
@@ -254,5 +233,5 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | A | | 1-3 | | | |
 | B | | 4-5 | | | |
 | C | | 6-7 | | | |
-| D | | 8-9 | | | |
-| E (G7 only) | | 10 | | | |
+| D | | 8 | | | |
+| E  | |9 | | | |
