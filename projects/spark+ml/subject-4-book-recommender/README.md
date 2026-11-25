@@ -139,12 +139,10 @@ Show the books of Suzanne Collins and of Harper Lee. Which authors owe most of t
 
 **Requirement:** `row_number()` over `Window.partitionBy(...).orderBy(...)` for the genres, and `F.sum(...).over(Window.partitionBy(...))` for the shares.
 
-## Phase B and Task 10
+## Phase B and Task 8
+- **Task 8:** time your Task 3 on `ratings.csv`, then on a Parquet copy of the same data.
 
-- **Task 8:** the script is `book_recommender_job.py`. It runs Tasks 1 and 3 and writes the tables of Task 3 in `output/`. Run it with `spark-submit --master "local[*]" --driver-memory 4g book_recommender_job.py data/`.
-- **Task 9:** time your Task 3 on `ratings.csv`, then on a Parquet copy of the same data.
-
-### Task 10 (G7 only, 10 points): To-read lists
+### Task 9: To-read lists
 
 - Count how many users marked each book "to read", and show the 10 most wanted books with their titles.
 - Join `to_read.csv` with `ratings.csv` on both `user_id` and `book_id` (see hint 4): how many to-read entries has the same user also rated? What can it mean?
