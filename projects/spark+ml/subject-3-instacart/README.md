@@ -132,12 +132,10 @@ counts.withColumn("share", F.col("n") / F.sum("n").over(w))
 
 **Requirement:** `F.sum(...).over(Window.partitionBy(...))` for the share, and `row_number()` over `Window.partitionBy(...).orderBy(...)` for the top 3.
 
-## Phase B and Task 10
+## Phase B and Task 8
+- **Task 8:** time your Task 3 on the CSV files, then on Parquet copies of the same files.
 
-- **Task 8:** the script is `instacart_segments_job.py`. It runs Tasks 1 and 3 and writes the two tables of Task 3 in `output/`. Run it with `spark-submit --master "local[*]" --driver-memory 4g instacart_segments_job.py data/`.
-- **Task 9:** time your Task 3 on the CSV files, then on Parquet copies of the same files.
-
-### Task 10 (G7 only, 10 points): Products bought together
+### Task 9: Products bought together
 
 - Take 5% of the prior orders (sample the distinct `order_id`s) and their lines in `lines`.
 - Join these lines with themselves on `order_id` (see hint 6), and keep the pairs where the first product name is smaller than the second, so that each pair counts once.
