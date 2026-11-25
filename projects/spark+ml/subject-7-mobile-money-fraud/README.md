@@ -10,9 +10,9 @@ You are the data team of a mobile-money operator: customers pay and send money f
 
 You answer with Spark: query 6.36 million transactions with the PySpark DataFrame API. Fraud is a very rare event: fewer than 2 transactions in 1,000 are fraudulent. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
-| Repository | Notebook | Script (Task 8) |
-| --- | --- | --- |
-| `mobile-money-fraud-group-X` | `Mobile_Money_Fraud_GroupX.ipynb` | `fraud_detection_job.py` |
+| Repository | Notebook |
+| --- | --- |
+| `mobile-money-fraud-group-X` | `Mobile_Money_Fraud_GroupX.ipynb` |
 
 **Download:** "Synthetic Financial Datasets For Fraud Detection" on Kaggle, at [kaggle.com/datasets/ealaxi/paysim1](https://www.kaggle.com/datasets/ealaxi/paysim1). A free Kaggle account is needed. The data comes from PaySim, a simulator built from one month of real logs of a mobile-money service in an African country. It is one CSV file whose name starts with `PS_`: about 6.36 million transactions over 31 days, of which 8,213 are frauds (0.13%).
 
@@ -122,10 +122,9 @@ On which day does the running total pass half of all the fraudulent money?
 
 ## Phase B and Task 10
 
-- **Task 8:** the script is `fraud_detection_job.py`. It runs Tasks 1 and 3 and writes the tables of Task 3 in `output/`. Run it with `spark-submit --master "local[*]" --driver-memory 4g fraud_detection_job.py data/`.
-- **Task 9:** time your Task 3 on the CSV file, then on a Parquet copy of the same data.
+- **Task 8:** time your Task 3 on the CSV file, then on a Parquet copy of the same data.
 
-### Task 10 (G7 only, 10 points): Fraud patterns by amount
+### Task 9: Fraud patterns by amount
 
 - Build amount bands with `F.when`: under 1,000; 1,000 to 10,000; 10,000 to 100,000; 100,000 to 1 million; 1 to 10 million; over 10 million.
 - For `TRANSFER` and `CASH_OUT`, compute the number of transactions, the number of frauds and the fraud rate of each band and type. Draw the fraud rate per band.
@@ -140,4 +139,3 @@ On which day does the running total pass half of all the fraudulent money?
 3. **Merchants.** Accounts whose name starts with `M` are merchants: `F.col("nameDest").startswith("M")`. Their balances are always 0.
 4. **Joining a table with itself.** Give the key the same name on both sides first: `select(F.col("nameDest").alias("account"))` for the transfers and `select(F.col("nameOrig").alias("account"))` for the cash-outs, then join `on="account"`.
 5. **`toPandas()` only on small results.** Aggregate first, then convert.
-6. **A script is not a notebook.** `fraud_detection_job.py` creates its own `SparkSession` and ends with `spark.stop()`.
