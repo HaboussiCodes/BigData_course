@@ -216,17 +216,9 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 *In which season are the largest drops?*
 
-## Phase B: execution and performance (Tasks 8-9)
+## Phase B: execution and performance
 
-### Task 8 · Standalone script
-
-| Item | Answer |
-|---|---|
-| Command used | `spark-submit --master "local[*]" --driver-memory 4g rain_tomorrow_job.py data/` |
-| Log | [`output/spark_submit/run.log`](output/spark_submit/run.log) |
-| Tables written in `output/` | *the CSV folders of Task 3* |
-
-### Task 9 · Performance experiment
+### Task 8 · Performance experiment
 
 *Run time of Task 3 on the full data. Run each setting 3 times and give the average. Time an action (`count()`, `collect()` or a write), not a transformation.*
 
@@ -236,17 +228,11 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | `local[*]`, CSV files | | | | | |
 | `local[*]`, Parquet copy | | | | | |
 
-![Spark UI: the stages of one job](output/spark_ui.png)
-
 *One or two sentences per result: what changed, and why.*
 
 *Why are thousands of small files slow to read?*
 
-### Bonus (+5 points, optional) · Cluster execution
-
-*If you ran the script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage: give the command and the log.*
-
-## Task 10 (G7 only) · Climate map
+## Task 9· Climate map
 
 ![Stations coloured by average temperature](output/task10_map_temperature.png)
 ![Stations coloured by the share of rainy days](output/task10_map_rain.png)
