@@ -46,8 +46,7 @@ The project runs over 2 weeks, with a checkpoint at the end of each week and the
 
 ## The two phases
 
-Every subject has the same 9 tasks in two phases, plus Task 10 for the group of 5. The project is mostly about PySpark queries: Tasks 1-7 use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`), except Task 5, which uses Spark SQL. Tasks 1-7 and 10 depend on the subject and are described in its folder. Tasks 8-9 are the same for every group and are described here.
-
+Every subject has the same 9 tasks in two phases, plus Task 10 for the group of 5. The project is mostly about PySpark queries: Tasks 1-7 use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`),Tasks depend on the subject and are described in its folder. 
 | Phase | Tasks |What you do |
 | --- | --- | --- |
 | A. PySpark queries | 1-7 | Load and clean the data, filter and sort, aggregate with `groupBy`, join tables, write one Spark SQL query, draw two charts of patterns over time, rank with window functions |
