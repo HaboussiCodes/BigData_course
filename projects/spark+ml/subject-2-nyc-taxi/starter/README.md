@@ -122,7 +122,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
 | 1 | Load and clean: read the three Parquet files, add `duration_min`, `hour` and `day_of_week`, keep valid trips of January to March 2024 | - | - |
-| 2 | Select, filter, sort: the longest trips, trips with more than 4 passengers, cash trips, tips over 20 dollars | A | 28 Nov |
+| 2 | Select, filter, sort: the longest trips, trips with more than 4 passengers, cash trips, tips over 20 dollars | - | - |
 | 3 | Aggregate: trips, fare and tip per payment type, trips and duration per day of the week | - | - |
 | 4 | Joins: pickup boroughs, pickup-dropoff borough pairs, zones with no pickup (`left_anti`) | - | - |
 | 5 | Spark SQL: the 10 busiest zone pairs | - | - |
