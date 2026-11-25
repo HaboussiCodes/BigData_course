@@ -112,16 +112,15 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and clean: read the five files, repair `books.csv` (`escape='"'`), add `first_author` | A | 28 Nov |
-| 2 | Select, filter, sort: the best-rated books, books before 1900, Harry Potter | A | 28 Nov |
-| 3 | Aggregate: ratings per star, ratings per user, ratings per book | A | 28 Nov |
-| 4 | Joins: the most rated books, the most used tags, books nobody wants to read (`left_anti`) | B | 5 Dec |
-| 5 | Spark SQL: the 10 best authors | B | 5 Dec |
-| 6 | Charts: books per decade, ratings per book | C | 5 Dec |
-| 7 | Window functions: the top 3 books of each genre, each book's share of its author's ratings | C | 5 Dec |
-| 8 | The `spark-submit` script `book_recommender_job.py` (Tasks 1 and 3) | D | 12 Dec |
-| 9 | Performance: `local[1]` against `local[*]`, CSV against Parquet | D | 19 Dec |
-| 10 | Extension: the to-read lists | E (G7) | 19 Dec |
+| 1 | Load and clean: read the five files, repair `books.csv` (`escape='"'`), add `first_author` | -|- |
+| 2 | Select, filter, sort: the best-rated books, books before 1900, Harry Potter |-| - |
+| 3 | Aggregate: ratings per star, ratings per user, ratings per book | - | - |
+| 4 | Joins: the most rated books, the most used tags, books nobody wants to read (`left_anti`) | - | - |
+| 5 | Spark SQL: the 10 best authors | - | - |
+| 6 | Charts: books per decade, ratings per book |-| - |
+| 7 | Window functions: the top 3 books of each genre, each book's share of its author's ratings | - | - |
+| 8 | Performance: `local[1]` against `local[*]`, CSV against Parquet | - | - |
+| 9 |  |  |  |
 
 **Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
 
