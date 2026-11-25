@@ -10,9 +10,9 @@ You are the data team of an online video-game shop. Customers write millions of 
 
 You answer with Spark: query 4.6 million reviews with the PySpark DataFrame API. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
-| Repository | Notebook | Script (Task 8) |
-| --- | --- | --- |
-| `amazon-reviews-group-X` | `Amazon_Reviews_GroupX.ipynb` | `review_sentiment_job.py` |
+| Repository | Notebook |
+| --- | --- |
+| `amazon-reviews-group-X` | `Amazon_Reviews_GroupX.ipynb` |
 
 **Download:** the Video_Games category of the Amazon Reviews 2023 dataset (McAuley Lab, UC San Diego), listed in the [dataset README](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/blame/main/README.md). No account is needed. Do not unzip the files: Spark reads `.gz` directly.
 
@@ -138,12 +138,11 @@ per_year.withColumn("growth", (F.col("reviews") / F.lag("reviews").over(w) - 1) 
 
 **Requirement:** `row_number()` over `Window.partitionBy(...).orderBy(...)` for the products, and `lag()` for the growth.
 
-## Phase B and Task 10
+## Phase B 
 
-- **Task 8:** the script is `review_sentiment_job.py`. It runs Tasks 1 and 3 and writes the tables of Task 3 in `output/`. Run it with `spark-submit --master "local[*]" --driver-memory 4g review_sentiment_job.py data/`.
-- **Task 9:** time your Task 3 on the original `.jsonl.gz` file, then on your Parquet copy. Print the number of partitions of each (`df.rdd.getNumPartitions()`).
+- **Task 8:** time your Task 3 on the original `.jsonl.gz` file, then on your Parquet copy. Print the number of partitions of each (`df.rdd.getNumPartitions()`).
 
-### Task 10 (G7 only, 10 points): Words of unhappy customers
+### Task 9: Words of unhappy customers
 
 - Take 50,000 negative reviews (1-2 stars) and 50,000 positive reviews (5 stars).
 - Split the text into words: `F.explode(F.split(F.lower("text"), "\\W+"))`. Remove the empty words, the words of 1 or 2 letters, and the stop words (`StopWordsRemover.loadDefaultStopWords("english")` gives the list).
@@ -160,4 +159,3 @@ per_year.withColumn("growth", (F.col("reviews") / F.lag("reviews").over(w) - 1) 
 5. **Read the metadata with a schema**, as in Task 1: its `details` field has hundreds of keys, and `price` is not always a number.
 6. **HTML in the text.** If `br` appears among your top words, remove tags such as `<br />` with `F.regexp_replace`.
 7. **Text is heavy.** Work on a sample, and call `toPandas()` only on small results.
-8. **A script is not a notebook.** `review_sentiment_job.py` creates its own `SparkSession` and ends with `spark.stop()`.
