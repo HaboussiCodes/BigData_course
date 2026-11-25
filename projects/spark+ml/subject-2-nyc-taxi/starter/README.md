@@ -1,6 +1,6 @@
 # NYC Taxi Trip Time · Group X
 
-**Big Data with PySpark · group project · 22 November to 19 December 2026 · Subject 2**
+**Big Data with PySpark · group project · Subject 2**
 
 > Replace **X** with your group number, in this file and in the file names.
 
@@ -214,15 +214,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 ## Phase B: execution and performance (Tasks 8-9)
 
-### Task 8 · Standalone script
-
-| Item | Answer |
-|---|---|
-| Command used | `spark-submit --master "local[*]" --driver-memory 4g taxi_duration_job.py data/` |
-| Log | [`output/spark_submit/run.log`](output/spark_submit/run.log) |
-| Tables written in `output/` | *the CSV folders of Task 3* |
-
-### Task 9 · Performance experiment
+### Task 8 · Performance experiment
 
 *Run time of Task 3 on the full data. Run each setting 3 times and give the average. Time an action (`count()`, `collect()` or a write), not a transformation.*
 
