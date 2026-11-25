@@ -155,4 +155,3 @@ counts.withColumn("share", F.col("n") / F.sum("n").over(w))
 5. **Join on the column name.** `a.join(b, on="order_id")` keeps one `order_id` column. A condition such as `a.order_id == b.order_id` keeps both, and later selects fail as ambiguous.
 6. **Joining a table with itself.** Rename the columns of the second copy first (`product_name` becomes `product_name_2`), then join `on="order_id"`.
 7. **`toPandas()` only on small results.** Aggregate first, then convert.
-8. **A script is not a notebook.** `instacart_segments_job.py` creates its own `SparkSession` and ends with `spark.stop()`.
