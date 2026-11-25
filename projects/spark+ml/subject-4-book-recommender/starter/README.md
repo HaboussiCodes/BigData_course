@@ -1,6 +1,6 @@
 # Book Recommender · Group X
 
-**Big Data with PySpark · group project · 22 November to 19 December 2026 · Subject 4**
+**Big Data with PySpark · group project · Subject 4**
 
 > Replace **X** with your group number, in this file and in the file names.
 
@@ -21,8 +21,8 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | A | | | | 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
-| D | | | | 8-9: `spark-submit` script, performance experiment |
-| E (G7 only) | | | | 10: extension |
+| D | | | | 8:  performance experiment |
+| E | | | | 9 |
 
 Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
 
@@ -107,15 +107,6 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 ## 4. How to run
 
 **Notebook:** start `jupyter notebook`, open `Book_Recommender_GroupX.ipynb`, then restart the kernel and run all the cells.
-
-**Script (Task 8):** from the repository folder (Git Bash on Windows), save the full terminal output as evidence:
-
-```bash
-mkdir -p output/spark_submit
-spark-submit --master "local[*]" --driver-memory 4g book_recommender_job.py data/ 2>&1 | tee output/spark_submit/run.log
-```
-
-The script creates its own `SparkSession`, reads the data path from the command line (`sys.argv[1]`), and ends with `spark.stop()`.
 
 ## 5. Tasks, owners and deadlines
 
