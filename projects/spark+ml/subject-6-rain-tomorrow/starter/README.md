@@ -1,6 +1,6 @@
 # Rain Tomorrow · Group X
 
-**Big Data with PySpark · group project · 22 November to 19 December 2026 · Subject 6**
+**Big Data with PySpark · group project ·**
 
 > Replace **X** with your group number, in this file and in the file names.
 
@@ -21,8 +21,8 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | A | | | | 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
-| D | | | | 8-9: `spark-submit` script, performance experiment |
-| E (G7 only) | | | | 10: extension |
+| D | | | | 8: performance experiment |
+| E | | | | 9: |
 
 Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
 
@@ -96,8 +96,7 @@ The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/main/pr
 ```text
 rain-tomorrow-group-X/
 ├── README.md                    <- this file, completed as your report
-├── Rain_Tomorrow_GroupX.ipynb   <- Tasks 1-7 and 9 (and 10 for G7)
-├── rain_tomorrow_job.py         <- Task 8
+├── Rain_Tomorrow_GroupX.ipynb   <- Tasks 1-9
 ├── output/                      <- charts, logs, screenshots
 ├── data/                        <- the dataset, never committed
 └── .gitignore
@@ -143,7 +142,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
   ```python
   # ============================================
   # Task 3: Aggregation with groupBy
-  # Author: First Last (ID: 12345)
+  # Author: First Last name
   # ============================================
   ```
 
@@ -246,5 +245,5 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | A | | 1-3 | | | |
 | B | | 4-5 | | | |
 | C | | 6-7 | | | |
-| D | | 8-9 | | | |
-| E (G7 only) | | 10 | | | |
+| D | | 8 | | | |
+| E  | | 9 | | | |
