@@ -1,6 +1,6 @@
 # Mobile Money Fraud · Group X
 
-**Big Data with PySpark · group project · 22 November to 19 December 2026 · Subject 7**
+**Big Data with PySpark · group project · Subject 7**
 
 > Replace **X** with your group number, in this file and in the file names.
 
@@ -10,7 +10,7 @@ You are the data team of a mobile-money operator: customers pay and send money f
 
 You answer with Spark: query 6.36 million transactions with the PySpark DataFrame API. Fraud is a very rare event: fewer than 2 transactions in 1,000 are fraudulent.
 
-This README has two parts. **Part 1** tells you how to start: the team, the data, the setup, the files, the tasks and the rules. **Part 2** is your project report: fill it in as you finish each task. The full instructions are in your teacher's repository: [Overview & rules](https://github.com/HaboussiCodes/BigData_course/tree/main/projects/spark%2Bml) and [Subject 7](https://github.com/HaboussiCodes/BigData_course/tree/main/projects/spark%2Bml/subject-7-mobile-money-fraud).
+This README has two parts. **Part 1** tells you how to start: the team, the data, the setup, the files, the tasks and the rules. **Part 2** is your project report: fill it in as you finish each task. The full instructions are in your teacher's repository: [Overview & rules](https://github.com/HaboussiCodes/BigData_course/tree/add-7-subjects/projects/spark%2Bml) and [Subject 7](https://github.com/HaboussiCodes/BigData_course/tree/add-7-subjects/projects/spark%2Bml/subject-7-mobile-money-fraud).
 
 # Part 1 · Getting started
 
@@ -21,10 +21,8 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | A | | | | 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
-| D | | | | 8-9: `spark-submit` script, performance experiment |
-| E (G7 only) | | | | 10: extension |
-
-Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
+| D | | | | 8: performance experiment |
+| E | | | | 9|
 
 ### Week 1 checklist
 
@@ -54,7 +52,6 @@ The whole project runs on a laptop in `local[*]` mode: no cluster is needed. Eve
 | Python | 3.11 | [python.org/downloads](https://www.python.org/downloads/) |
 | PySpark and libraries | PySpark 3.5.x, pandas below 3 | `pip install "pyspark==3.5.*" "pandas<3" matplotlib pyarrow jupyter` |
 
-**Windows only:** copy `winutils.exe` and `hadoop.dll` from a `hadoop-3.3.x/bin` folder of [cdarlint/winutils](https://github.com/cdarlint/winutils) into `C:\hadoop\bin`, set `HADOOP_HOME=C:\hadoop`, add `%HADOOP_HOME%\bin` to `PATH`, and open a new terminal.
 
 **Quick check** (every member, in a terminal):
 
@@ -83,8 +80,7 @@ The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/main/pr
 ```text
 mobile-money-fraud-group-X/
 ├── README.md                         <- this file, completed as your report
-├── Mobile_Money_Fraud_GroupX.ipynb   <- Tasks 1-7 and 9 (and 10 for G7)
-├── fraud_detection_job.py            <- Task 8
+├── Mobile_Money_Fraud_GroupX.ipynb   <- Tasks 1-9
 ├── output/                           <- charts, logs, screenshots
 ├── data/                             <- the dataset, never committed
 └── .gitignore
@@ -96,31 +92,21 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 **Notebook:** start `jupyter notebook`, open `Mobile_Money_Fraud_GroupX.ipynb`, then restart the kernel and run all the cells.
 
-**Script (Task 8):** from the repository folder (Git Bash on Windows), save the full terminal output as evidence:
-
-```bash
-mkdir -p output/spark_submit
-spark-submit --master "local[*]" --driver-memory 4g fraud_detection_job.py data/ 2>&1 | tee output/spark_submit/run.log
-```
-
-The script creates its own `SparkSession`, reads the data path from the command line (`sys.argv[1]`), and ends with `spark.stop()`.
-
 ## 5. Tasks, owners and deadlines
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and inspect: read the CSV file, count the nulls of each column, add `hour` and `day` | A | 28 Nov |
-| 2 | Select, filter, sort: the largest transactions, frauds and flagged transactions, payments to merchants | A | 28 Nov |
-| 3 | Aggregate: fraud rate per type, the old rule against the real frauds | A | 28 Nov |
-| 4 | Joins: a table of type descriptions, transfers followed by cash-outs, accounts that never send (`left_anti`) | B | 5 Dec |
-| 5 | Spark SQL: where the fraudulent money goes | B | 5 Dec |
-| 6 | Charts: the fraud rate per hour and per day | C | 5 Dec |
-| 7 | Window functions: the largest transactions of each type, the running total of fraudulent money | C | 5 Dec |
-| 8 | The `spark-submit` script `fraud_detection_job.py` (Tasks 1 and 3) | D | 12 Dec |
-| 9 | Performance: `local[1]` against `local[*]`, CSV against Parquet | D | 19 Dec |
-| 10 | Extension: fraud patterns by amount | E (G7) | 19 Dec |
+| 1 | Load and inspect: read the CSV file, count the nulls of each column, add `hour` and `day` | - | - |
+| 2 | Select, filter, sort: the largest transactions, frauds and flagged transactions, payments to merchants | - | - |
+| 3 | Aggregate: fraud rate per type, the old rule against the real frauds |- |- |
+| 4 | Joins: a table of type descriptions, transfers followed by cash-outs, accounts that never send (`left_anti`) | - | - 
+| 5 | Spark SQL: where the fraudulent money goes | - | - |
+| 6 | Charts: the fraud rate per hour and per day | - | - |
+| 7 | Window functions: the largest transactions of each type, the running total of fraudulent money | - | - |
+| 8 | Performance: `local[1]` against `local[*]`, CSV against Parquet | - | - |
+| 9 |fraud patterns by amount | -| - |
 
-**Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
+**Points (out of 15):** 
 
 ## 6. Rules
 
@@ -228,15 +214,10 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | `local[*]`, CSV | | | | |
 | `local[*]`, Parquet copy | | | | |
 
-![Spark UI: the stages of one job](output/spark_ui.png)
-
 *One or two sentences per result: what changed, and why.*
 
-### Bonus (+5 points, optional) · Cluster execution
 
-*If you ran the script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage: give the command and the log.*
-
-## Task 10 (G7 only) · Fraud patterns by amount
+## Task 9 · Fraud patterns by amount
 
 *The table of the number of transactions, the number of frauds and the fraud rate per amount band and type (`TRANSFER`, `CASH_OUT`).*
 
@@ -256,5 +237,5 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | A | | 1-3 | | | |
 | B | | 4-5 | | | |
 | C | | 6-7 | | | |
-| D | | 8-9 | | | |
-| E (G7 only) | | 10 | | | |
+| D | | 8 | | | |
+| E  | | 9 | | | |
