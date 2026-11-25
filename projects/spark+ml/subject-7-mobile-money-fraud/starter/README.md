@@ -73,7 +73,7 @@ spark = (SparkSession.builder.master("local[*]").appName("project")
 spark.sparkContext.setLogLevel("WARN")
 ```
 
-The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/main/projects/spark%2Bml#setup) of the Overview & rules lists the common errors and their fixes (wrong Java version, `winutils`, `OutOfMemoryError`…).
+The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/add-7-subjects/projects/spark%2Bml#setup) of the Overview & rules lists the common errors and their fixes (wrong Java version, `winutils`, `OutOfMemoryError`…).
 
 ## 3. Repository layout
 
@@ -196,15 +196,7 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 ## Phase B: execution and performance (Tasks 8-9)
 
-### Task 8 · Standalone script
-
-| Item | Answer |
-|---|---|
-| Command used | `spark-submit --master "local[*]" --driver-memory 4g fraud_detection_job.py data/` |
-| Log | [`output/spark_submit/run.log`](output/spark_submit/run.log) |
-| Tables written in `output/` | *the CSV folders of Task 3* |
-
-### Task 9 · Performance experiment
+### Task 8 · Performance experiment
 
 *Run time of Task 3 on the full data. Run each setting 3 times and give the average. Time an action (`count()`, `collect()` or a write), not a transformation.*
 
@@ -215,7 +207,6 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | `local[*]`, Parquet copy | | | | |
 
 *One or two sentences per result: what changed, and why.*
-
 
 ## Task 9 · Fraud patterns by amount
 
