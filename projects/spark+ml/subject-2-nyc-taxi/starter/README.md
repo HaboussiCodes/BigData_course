@@ -21,8 +21,8 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | A | | | | 1-3: loading and cleaning, filtering and sorting, aggregation with `groupBy` |
 | B | | | | 4-5: joins, Spark SQL |
 | C | | | | 6-7: charts, window functions |
-| D | | | | 8-9: `spark-submit` script, performance experiment |
-| E (G7 only) | | | | 10: extension |
+| D | | | | 8: performance experiment |
+| E | | | | 9 |
 
 Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
 
@@ -121,18 +121,17 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and clean: read the three Parquet files, add `duration_min`, `hour` and `day_of_week`, keep valid trips of January to March 2024 | A | 28 Nov |
+| 1 | Load and clean: read the three Parquet files, add `duration_min`, `hour` and `day_of_week`, keep valid trips of January to March 2024 | - | - |
 | 2 | Select, filter, sort: the longest trips, trips with more than 4 passengers, cash trips, tips over 20 dollars | A | 28 Nov |
-| 3 | Aggregate: trips, fare and tip per payment type, trips and duration per day of the week | A | 28 Nov |
-| 4 | Joins: pickup boroughs, pickup-dropoff borough pairs, zones with no pickup (`left_anti`) | B | 5 Dec |
-| 5 | Spark SQL: the 10 busiest zone pairs | B | 5 Dec |
-| 6 | Charts: trips and average duration per pickup hour | C | 5 Dec |
-| 7 | Window functions: the top 3 zones of each borough, the 7-day moving average of daily trips | C | 5 Dec |
-| 8 | The `spark-submit` script `taxi_duration_job.py` (Tasks 1 and 3) | D | 12 Dec |
-| 9 | Performance: `local[1]` against `local[*]`, Parquet against a CSV copy | D | 19 Dec |
-| 10 | Extension: the busy hours of each zone (heatmap) | E (G7) | 19 Dec |
+| 3 | Aggregate: trips, fare and tip per payment type, trips and duration per day of the week | - | - |
+| 4 | Joins: pickup boroughs, pickup-dropoff borough pairs, zones with no pickup (`left_anti`) | - | - |
+| 5 | Spark SQL: the 10 busiest zone pairs | - | - |
+| 6 | Charts: trips and average duration per pickup hour | - | - |
+| 7 | Window functions: the top 3 zones of each borough, the 7-day moving average of daily trips | - | - |
+| 8 | Performance: `local[1]` against `local[*]`, Parquet against a CSV copy | - | - |
+| 9 | Extension: the busy hours of each zone (heatmap) | - | - |
 
-**Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
+**Points (out of 15):**
 
 ## 6. Rules
 
@@ -233,15 +232,9 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | `local[*]`, Parquet | | | | |
 | `local[*]`, CSV copy | | | | |
 
-![Spark UI: the stages of one job](output/spark_ui.png)
-
 *One or two sentences per result: what changed, and why.*
 
-### Bonus (+5 points, optional) · Cluster execution
-
-*If you ran the script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage: give the command and the log.*
-
-## Task 10 (G7 only) · Busy hours of each zone
+## Task 9 · Busy hours of each zone
 
 ![Trips per hour for the 20 busiest pickup zones](output/task10_heatmap.png)
 
@@ -254,5 +247,5 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | A | | 1-3 | | | |
 | B | | 4-5 | | | |
 | C | | 6-7 | | | |
-| D | | 8-9 | | | |
-| E (G7 only) | | 10 | | | |
+| D | | 8 | | | |
+| E | | 9 | | | |
