@@ -10,10 +10,9 @@ You are the data team of an online grocery store. Before planning new promotions
 
 You answer with Spark: query 3.4 million orders with the PySpark DataFrame API. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
-| Repository | Notebook | Script (Task 8) |
+| Repository | Notebook |
 | --- | --- | --- |
-| `instacart-group-X` | `Instacart_GroupX.ipynb` | `instacart_segments_job.py` |
-
+| `instacart-group-X` | `Instacart_GroupX.ipynb` |
 **Download:** "The Instacart Online Grocery Shopping Dataset 2017", published for the Kaggle competition [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis/data). A free Kaggle account is needed, and you must accept the competition rules once before downloading. It has six CSV files:
 
 | File | Content | Size |
