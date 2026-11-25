@@ -157,4 +157,3 @@ Show the books of Suzanne Collins and of Harper Lee. Which authors owe most of t
 3. **Tags are shelves.** Many tags, like `to-read` or `favorites`, are not genres.
 4. **Join on two columns** with a list: `to_read.join(ratings, on=["user_id", "book_id"])`.
 5. **`toPandas()` only on small results.** Aggregate first, then convert.
-6. **A script is not a notebook.** `book_recommender_job.py` creates its own `SparkSession` and ends with `spark.stop()`.
