@@ -11,7 +11,7 @@ You are the data team of a reading app. Users rate the books they read. The head
 You answer with Spark: query 6 million ratings with the PySpark DataFrame API. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
 | Repository | Notebook |
-| --- | --- | --- |
+| --- | --- |
 | `book-recommender-group-X` | `Book_Recommender_GroupX.ipynb` |
 
 **Download:** the [goodbooks-10k dataset](https://github.com/zygmuntz/goodbooks-10k) on GitHub, built from Goodreads. No account is needed:
