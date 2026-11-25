@@ -1,6 +1,6 @@
 # Amazon Review Sentiment · Group X
 
-**Big Data with PySpark · group project · 22 November to 19 December 2026 · Subject 5**
+**Big Data with PySpark · group project . Subject 5**
 
 > Replace **X** with your group number, in this file and in the file names.
 
@@ -119,18 +119,17 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and clean: read the reviews, add `date` and `year`, remove empty texts, save a Parquet copy | A | 28 Nov |
-| 2 | Select, filter, sort: the most helpful reviews, verified purchases, reviews about refunds | A | 28 Nov |
-| 3 | Aggregate: reviews per star, text length per star, verified against non-verified | A | 28 Nov |
-| 4 | Joins: the most reviewed products, reviews without metadata (`left_anti`), rating per price band | B | 5 Dec |
-| 5 | Spark SQL: the 10 stores with the most unhappy customers | B | 5 Dec |
-| 6 | Charts: reviews per year, average rating per year | C | 5 Dec |
-| 7 | Window functions: the top 3 products of each year, the yearly growth of reviews | C | 5 Dec |
-| 8 | The `spark-submit` script `review_sentiment_job.py` (Tasks 1 and 3) | D | 12 Dec |
-| 9 | Performance: `local[1]` against `local[*]`, `.jsonl.gz` against Parquet | D | 19 Dec |
-| 10 | Extension: the words of unhappy customers | E (G7) | 19 Dec |
+| 1 | Load and clean: read the reviews, add `date` and `year`, remove empty texts, save a Parquet copy | - | - |
+| 2 | Select, filter, sort: the most helpful reviews, verified purchases, reviews about refunds | -| - |
+| 3 | Aggregate: reviews per star, text length per star, verified against non-verified | - | - |
+| 4 | Joins: the most reviewed products, reviews without metadata (`left_anti`), rating per price band | - |- |
+| 5 | Spark SQL: the 10 stores with the most unhappy customers | - |- |
+| 6 | Charts: reviews per year, average rating per year | - | - |
+| 7 | Window functions: the top 3 products of each year, the yearly growth of reviews |-| - |
+| 8 | Performance: `local[1]` against `local[*]`, `.jsonl.gz` against Parquet | - | - |
+| 9 | Extension: the words of unhappy customers | - | - |
 
-**Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
+**Points (out of 15):** 
 
 ## 6. Rules
 
@@ -140,7 +139,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
   ```python
   # ============================================
   # Task 3: Aggregation with groupBy
-  # Author: First Last (ID: 12345)
+  # Author: First Last name
   # ============================================
   ```
 
@@ -215,15 +214,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 ## Phase B: execution and performance (Tasks 8-9)
 
-### Task 8 · Standalone script
-
-| Item | Answer |
-|---|---|
-| Command used | `spark-submit --master "local[*]" --driver-memory 4g review_sentiment_job.py data/` |
-| Log | [`output/spark_submit/run.log`](output/spark_submit/run.log) |
-| Tables written in `output/` | *the CSV folders of Task 3* |
-
-### Task 9 · Performance experiment
+### Task 8 · Performance experiment
 
 *Run time of Task 3 on the full data. Run each setting 3 times and give the average. Time an action (`count()`, `collect()` or a write), not a transformation.*
 
@@ -239,11 +230,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 *Why does the `.jsonl.gz` file give so few partitions?*
 
-### Bonus (+5 points, optional) · Cluster execution
-
-*If you ran the script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage: give the command and the log.*
-
-## Task 10 (G7 only) · Words of unhappy customers
+## Task 9 · Words of unhappy customers
 
 *The 20 most frequent words of 50,000 negative reviews (1-2 stars) and of 50,000 positive reviews (5 stars), side by side.*
 
@@ -260,5 +247,5 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | A | | 1-3 | | | |
 | B | | 4-5 | | | |
 | C | | 6-7 | | | |
-| D | | 8-9 | | | |
-| E (G7 only) | | 10 | | | |
+| D | | 8 | | | |
+| E  | | 9 | | | |
