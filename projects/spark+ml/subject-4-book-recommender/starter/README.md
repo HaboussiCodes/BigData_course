@@ -207,15 +207,7 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 ## Phase B: execution and performance (Tasks 8-9)
 
-### Task 8 · Standalone script
-
-| Item | Answer |
-|---|---|
-| Command used | `spark-submit --master "local[*]" --driver-memory 4g book_recommender_job.py data/` |
-| Log | [`output/spark_submit/run.log`](output/spark_submit/run.log) |
-| Tables written in `output/` | *the CSV folders of Task 3* |
-
-### Task 9 · Performance experiment
+### Task 8 · Performance experiment
 
 *Run time of Task 3 on the full data. Run each setting 3 times and give the average. Time an action (`count()`, `collect()` or a write), not a transformation.*
 
@@ -225,15 +217,9 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | `local[*]`, `ratings.csv` | | | | |
 | `local[*]`, Parquet copy | | | | |
 
-![Spark UI: the stages of one job](output/spark_ui.png)
-
 *One or two sentences per result: what changed, and why.*
 
-### Bonus (+5 points, optional) · Cluster execution
-
-*If you ran the script on a real cluster (YARN or Spark standalone) or on a cloud notebook service, with the data on HDFS or cloud storage: give the command and the log.*
-
-## Task 10 (G7 only) · To-read lists
+## Task 9· To-read lists
 
 *The 10 most wanted books (marked "to read" by the most users), and the 10 books with the highest ratio of to-read count / number of ratings (at least 100 ratings).*
 
@@ -251,5 +237,5 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | A | | 1-3 | | | |
 | B | | 4-5 | | | |
 | C | | 6-7 | | | |
-| D | | 8-9 | | | |
-| E (G7 only) | | 10 | | | |
+| D | | 8 | | | |
+| E | | 9 | | | |
