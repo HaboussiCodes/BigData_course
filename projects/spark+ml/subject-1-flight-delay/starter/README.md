@@ -204,8 +204,6 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | `local[*]`, CSV | | | | |
 | `local[*]`, Parquet copy | | | | |
 
-![Spark UI: the stages of one job](output/spark_ui.png)
-
 *One or two sentences per result: what changed, and why.*
 
 ## Task 9 · Causes of delays
