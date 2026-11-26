@@ -44,7 +44,7 @@ Columns used in this project:
 | `average_rating`, `ratings_count` | double, int | Goodreads' own average and number of ratings, for comparison |
 | `tag_name`, `count` | string, int | Tags and genres (Tasks 4 and 7) |
 
-## Phase A: PySpark queries (65 points)
+## Phase A: PySpark queries
 
 Use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`) in every task, except Task 5, which uses Spark SQL.
 
