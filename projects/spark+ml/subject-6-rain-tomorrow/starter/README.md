@@ -121,7 +121,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 | Task | What you do | Member | Push by |
 |---|---|---|---|
-| 1 | Load and clean: read all the station files as strings, replace the missing-value codes, convert to °C, add `rain`, save a Parquet copy | A | 28 Nov |
+| 1 | Load and clean: read all the station files as strings, replace the missing-value codes, convert to °C, add `rain`, save a Parquet copy | - | - |
 | 2 | Select, filter, sort: the hottest days, days above 45 °C, the Algiers stations | - | - |
 | 3 | Aggregate: days, temperature and rain per station, stations and rows per year | - | - |
 | 4 | Joins: countries from `isd-history.csv`, the rainiest and driest countries, stations missing from the list (`left_anti`) | - | - |
