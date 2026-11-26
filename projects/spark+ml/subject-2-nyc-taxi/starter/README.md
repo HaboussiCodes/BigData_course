@@ -24,7 +24,7 @@ This README has two parts. **Part 1** tells you how to start: the team, the data
 | D | | | | 8: performance experiment |
 | E | | | | 9 |
 
-Your teacher gives each member one block of tasks. Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
+Each member commits the code of their own block, but everyone must understand the whole project: at the oral check, the teacher can ask any member about any task.
 
 ### Week 1 checklist
 
@@ -65,8 +65,6 @@ The whole project runs on a laptop in `local[*]` mode: no cluster is needed. Eve
 | Java (JDK) | 17, not 21 or later | [Temurin 17 LTS](https://adoptium.net) |
 | Python | 3.11 | [python.org/downloads](https://www.python.org/downloads/) |
 | PySpark and libraries | PySpark 3.5.x, pandas below 3 | `pip install "pyspark==3.5.*" "pandas<3" matplotlib pyarrow jupyter` |
-
-**Windows only:** copy `winutils.exe` and `hadoop.dll` from a `hadoop-3.3.x/bin` folder of [cdarlint/winutils](https://github.com/cdarlint/winutils) into `C:\hadoop\bin`, set `HADOOP_HOME=C:\hadoop`, add `%HADOOP_HOME%\bin` to `PATH`, and open a new terminal.
 
 **Quick check** (every member, in a terminal):
 
