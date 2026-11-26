@@ -96,7 +96,6 @@ The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/main/pr
 book-recommender-group-X/
 ├── README.md                       <- this file, completed as your report
 ├── Book_Recommender_GroupX.ipynb   <- Tasks 1-7 and 9 (and 10 for G7)
-├── book_recommender_job.py         <- Task 8
 ├── output/                         <- charts, logs, screenshots
 ├── data/                           <- the dataset, never committed
 └── .gitignore
@@ -122,7 +121,7 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 | 8 | Performance: `local[1]` against `local[*]`, CSV against Parquet | - | - |
 | 9 |  |  |  |
 
-**Points (out of 100, 110 for G7):** Tasks 1-7: 65 · Tasks 8-9: 20 · README report: 10 · Git workflow: 5 · Task 10 (G7 only): 10 · bonus, cluster execution: +5. Each member's grade out of 20 is the group score × their contribution share ÷ 5 (÷ 5.5 for G7).
+**Points (out 15):** 
 
 ## 6. Rules
 
