@@ -107,8 +107,6 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 
 **Notebook:** start `jupyter notebook`, open `NYC_Taxi_GroupX.ipynb`, then restart the kernel and run all the cells.
 
-**Script (Task 8):** from the repository folder (Git Bash on Windows), save the full terminal output as evidence:
-
 ```bash
 mkdir -p output/spark_submit
 spark-submit --master "local[*]" --driver-memory 4g taxi_duration_job.py data/ 2>&1 | tee output/spark_submit/run.log
