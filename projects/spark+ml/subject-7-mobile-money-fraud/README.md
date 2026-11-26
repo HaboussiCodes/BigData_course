@@ -122,7 +122,7 @@ On which day does the running total pass half of all the fraudulent money?
 
 ## Phase B 
 
-- **Task 8:** time your Task 3 on the CSV file, then on a Parquet copy of the same data.
+### Task 8:  time your Task 3 on the CSV file, then on a Parquet copy of the same data.
 
 ### Task 9: Fraud patterns by amount
 
