@@ -11,7 +11,7 @@ You are the data team of a weather service. The director asks:
 You answer with Spark: query two years of daily observations from thousands of weather stations with the PySpark DataFrame API. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
 | Repository | Notebook |
-| --- | --- | --- |
+| --- | --- 
 | `rain-tomorrow-group-X` | `Rain_Tomorrow_GroupX.ipynb` |
 **Download:** the Global Surface Summary of the Day (GSOD) of NOAA, from the [NCEI archive](https://www.ncei.noaa.gov/data/global-summary-of-the-day/archive/): one `.tar.gz` per year, holding one CSV file per station. Also download the station list. No account is needed:
 
