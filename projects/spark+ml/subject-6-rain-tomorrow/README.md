@@ -46,7 +46,7 @@ Columns used in this project (the [GSOD readme](https://git.lsit.ucsb.edu/public
 
 **Rainy day:** `rain` = 1 when `PRCP` > 0 (and not missing) or the second digit of `FRSHTT` is 1. `rain` = 0 when `PRCP` = 0 and that digit is 0. Otherwise `rain` is unknown (null).
 
-## Phase A: PySpark queries (65 points)
+## Phase A: PySpark queries
 
 Use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`) in every task, except Task 5, which uses Spark SQL.
 
