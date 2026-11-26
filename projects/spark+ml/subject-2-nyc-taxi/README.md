@@ -10,9 +10,9 @@ You are the data team of a New York taxi app. The product manager wants to under
 
 You answer with Spark: query three months of yellow-taxi trips with the PySpark DataFrame API. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
-| Repository | Notebook | Script (Task 8) |
-| --- | --- | --- |
-| `nyc-taxi-group-X` | `NYC_Taxi_GroupX.ipynb` | `taxi_duration_job.py` |
+| Repository | Notebook |
+| --- | --- |
+| `nyc-taxi-group-X` | `NYC_Taxi_GroupX.ipynb` |
 
 **Download:** the trip records of the NYC Taxi and Limousine Commission (TLC), from the [TLC Trip Record Data page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page). No account is needed. The files are in Parquet, one per month. Use January to March 2024, plus the zone lookup table:
 
