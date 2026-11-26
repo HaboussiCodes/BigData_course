@@ -10,9 +10,9 @@ You are the data team of an airline operations centre. The Operations Director h
 
 You answer it with Apache Spark: query the data with the PySpark DataFrame API. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
-| Repository | Notebook | Script (Task 8) |
-| --- | --- | --- |
-| `flight-delay-group-X` | `Flight_Delay_GroupX.ipynb` | `flight_delay_job.py` |
+| Repository | Notebook |
+| --- | --- |
+| `flight-delay-group-X` | `Flight_Delay_GroupX.ipynb` |
 
 **Download:** the "2015 Flight Delays and Cancellations" dataset of the US Department of Transportation, on Kaggle at [kaggle.com/datasets/usdot/flight-delays](https://www.kaggle.com/datasets/usdot/flight-delays). A free Kaggle account is needed. It has three CSV files:
 
