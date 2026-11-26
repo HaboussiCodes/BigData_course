@@ -37,7 +37,7 @@ Columns of `flights.csv` used in this project:
 
 **Label:** `label = 1` if `ARRIVAL_DELAY >= 15`, otherwise `0`.
 
-## Phase A: PySpark queries (65 points)
+## Phase A: PySpark queries 
 
 Use the DataFrame API (`select`, `filter`, `groupBy`, `join`, `Window`) in every task, except Task 5, which uses Spark SQL.
 
