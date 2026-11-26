@@ -10,10 +10,9 @@ You are the data team of a weather service. The director asks:
 
 You answer with Spark: query two years of daily observations from thousands of weather stations with the PySpark DataFrame API. Calendar, Phase B, work distribution, deliverables and grading are in the [Overview & rules](../README.md) page.
 
-| Repository | Notebook | Script (Task 8) |
+| Repository | Notebook |
 | --- | --- | --- |
-| `rain-tomorrow-group-X` | `Rain_Tomorrow_GroupX.ipynb` | `rain_tomorrow_job.py` |
-
+| `rain-tomorrow-group-X` | `Rain_Tomorrow_GroupX.ipynb` |
 **Download:** the Global Surface Summary of the Day (GSOD) of NOAA, from the [NCEI archive](https://www.ncei.noaa.gov/data/global-summary-of-the-day/archive/): one `.tar.gz` per year, holding one CSV file per station. Also download the station list. No account is needed:
 
 ```bash
@@ -149,12 +148,11 @@ algiers.withColumn("change", F.col("temp_c") - F.lag("temp_c").over(w))
 
 **Requirement:** `row_number()` over `Window.partitionBy(...).orderBy(...)` for the hottest days, and `lag()` for the daily change.
 
-## Phase B and Task 10
+## Phase B 
 
-- **Task 8:** the script is `rain_tomorrow_job.py`. It runs Tasks 1 and 3 and writes the tables of Task 3 in `output/`. Run it with `spark-submit --master "local[*]" --driver-memory 4g rain_tomorrow_job.py data/`.
-- **Task 9:** time your Task 3 on the thousands of small CSV files, then on your Parquet copy. Print the number of partitions of each (`df.rdd.getNumPartitions()`).
+- **Task 8:** time your Task 3 on the thousands of small CSV files, then on your Parquet copy. Print the number of partitions of each (`df.rdd.getNumPartitions()`).
 
-### Task 10 (G7 only, 10 points): Climate map
+### Task 9: Climate map
 
 - Build one row per station with at least 300 days of data: latitude, longitude, average temperature, share of rainy days.
 - Draw the stations with longitude on x and latitude on y, coloured by average temperature (`plt.scatter(..., c=...)` and `plt.colorbar()`).
@@ -171,4 +169,3 @@ algiers.withColumn("change", F.col("temp_c") - F.lag("temp_c").over(w))
 5. **Units.** °C = (°F - 32) × 5 / 9.
 6. **Missing days.** Stations skip days, so `lead()` and `lag()` do not always give the next or the previous day: check `F.datediff`.
 7. **Many small files are slow.** Save to Parquet once in Task 1, and read the Parquet afterwards.
-8. **A script is not a notebook.** `rain_tomorrow_job.py` creates its own `SparkSession` and ends with `spark.stop()`.
