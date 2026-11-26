@@ -102,16 +102,6 @@ The notebook has one markdown header per task, with the code, the outputs, the c
 ## 4. How to run
 
 **Notebook:** start `jupyter notebook`, open `Amazon_Reviews_GroupX.ipynb`, then restart the kernel and run all the cells.
-
-**Script (Task 8):** from the repository folder (Git Bash on Windows), save the full terminal output as evidence:
-
-```bash
-mkdir -p output/spark_submit
-spark-submit --master "local[*]" --driver-memory 4g review_sentiment_job.py data/ 2>&1 | tee output/spark_submit/run.log
-```
-
-The script creates its own `SparkSession`, reads the data path from the command line (`sys.argv[1]`), and ends with `spark.stop()`.
-
 ## 5. Tasks, owners and deadlines
 
 | Task | What you do | Member | Push by |
