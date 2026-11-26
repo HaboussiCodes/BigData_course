@@ -151,7 +151,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 
 # Part 2 · Project report
 
-> Fill in every section before the deadline. Replace the lines in *italics* and fill the empty cells. The numbers must be the same as in your notebook outputs. Save your charts in `output/`: the image links below already point there, so keep the same file names or change the links. The README report is worth 10 points: all sections present, clear conclusions.
+> Fill in every section before the deadline. Replace the lines in *italics* and fill the empty cells. The numbers must be the same as in your notebook outputs. Save your charts in `output/`: the image links below already point there, so keep the same file names or change the links.
 
 ## Executive summary
 
@@ -222,8 +222,6 @@ The script creates its own `SparkSession`, reads the data path from the command 
 | `local[1]`, `.jsonl.gz` | | | | | |
 | `local[*]`, `.jsonl.gz` | | | | | |
 | `local[*]`, Parquet copy | | | | | |
-
-![Spark UI: the stages of one job](output/spark_ui.png)
 
 *One or two sentences per result: what changed, and why.*
 
