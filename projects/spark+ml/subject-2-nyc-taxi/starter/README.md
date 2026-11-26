@@ -95,8 +95,7 @@ The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/main/pr
 ```text
 nyc-taxi-group-X/
 ├── README.md               <- this file, completed as your report
-├── NYC_Taxi_GroupX.ipynb   <- Tasks 1-7 and 9 (and 10 for G7)
-├── taxi_duration_job.py    <- Task 8
+├── NYC_Taxi_GroupX.ipynb   <- Tasks 1-9
 ├── output/                 <- charts, logs, screenshots
 ├── data/                   <- the dataset, never committed
 └── .gitignore
