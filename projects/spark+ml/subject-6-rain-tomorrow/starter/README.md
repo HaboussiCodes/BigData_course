@@ -147,7 +147,7 @@ The script creates its own `SparkSession`, reads the data path from the command 
 - **Teacher access:** add your teacher (`HaboussiCodes`) as a collaborator of the repository during week 1.
 - **Data:** never commit the data, the Parquet copies or any large file. GitHub refuses files larger than 100 MB.
 - **AI tools:** allowed for debugging errors, conceptual explanations and comments. Generating a whole task or the whole pipeline is not allowed. At the oral check, a student who cannot explain their own code gets zero.
-- **Oral check:** in the first lab session after the deadline, 15 minutes per group: a 5-minute demo of the results, then each member explains a part of their own code.
+- **Oral check:**  after the deadline, 10 minutes per group: a 5-minute demo of the results, then each member explains a part of their own code.
 
 ---
 
