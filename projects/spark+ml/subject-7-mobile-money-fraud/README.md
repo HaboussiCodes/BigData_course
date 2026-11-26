@@ -120,7 +120,7 @@ On which day does the running total pass half of all the fraudulent money?
 
 **Requirement:** `row_number()` over `Window.partitionBy(...).orderBy(...)` for the largest transactions, and `rowsBetween` for the running total.
 
-## Phase B and Task 10
+## Phase B 
 
 - **Task 8:** time your Task 3 on the CSV file, then on a Parquet copy of the same data.
 
