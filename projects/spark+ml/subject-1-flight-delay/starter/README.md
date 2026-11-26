@@ -81,8 +81,7 @@ The [Setup section](https://github.com/HaboussiCodes/BigData_course/tree/main/pr
 ```text
 flight-delay-group-X/
 ├── README.md                   <- this file, completed as your report
-├── Flight_Delay_GroupX.ipynb   <- Tasks 1-7 and 9 (and 10 for G7)
-├── flight_delay_job.py         <- Task 8
+├── Flight_Delay_GroupX.ipynb   <- Tasks 1-9
 ├── output/                     <- charts, logs, screenshots
 ├── data/                       <- the dataset, never committed
 └── .gitignore
